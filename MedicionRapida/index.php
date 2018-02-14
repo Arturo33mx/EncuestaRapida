@@ -92,7 +92,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 							</div>
 							<div class="form-group alert alert-info divDato" style="<?php if(!$Pte) echo 'display:none;';?>">
 								<h4>
-									Buenos días, hablo del “Centro Internacional de Encuestas Mexico”  para realizarle unas sencillas preguntas.
+									Buenos días, hablo de “Encuestadora 1321”  para realizarle unas sencillas preguntas.
 									<hr>
 								</h4>
 								<input type="hidden" id="txtClave" value="<?php echo $Clave;?>">
