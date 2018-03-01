@@ -7,7 +7,7 @@ if($opc==1){
 </button>
 <div class="collapse navbar-collapse " id="navbarResponsive">
 	<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="ENCUESTA RAPIDA DE MEDICIÓN">
 			<a class="nav-link" href="index.php">
 				<i class="fa fa-fw fa-question-circle"></i>
 				<span class="nav-link-text">Encuesta</span>
@@ -50,7 +50,7 @@ else{
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item"> 
-				<a class="nav-link js-scroll-trigger" href="../class/Cerrar.php"><?php echo $_SESSION['NombreCompleto']; ?>(Salir)</a> 
+				<a class="nav-link js-scroll-trigger" href="class/Cerrar.php"><?php echo $_SESSION['NombreCompleto']; ?>(Salir)</a> 
 			</li>
 		</ul>
 	</div>

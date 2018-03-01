@@ -8,6 +8,7 @@ elseif($_SESSION['UsuarioCveSistema']!=4 || $_SESSION['EncuestaCveEncuesta']!=1)
 	echo "<br>Datos:";
 	echo "<br>".$_SESSION['NombreCompleto'];
 	echo "<br>".$_SESSION['UsuarioCveSistema'];
+	echo "<a href='class/Cerrar.php'>".$_SESSION['NombreCompleto']."(Salir)</a> ";
 	exit();
 }
 
@@ -72,7 +73,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 		}
 	</script>
 </head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 		<?php $opc=1; include('../menu.php'); ?>
