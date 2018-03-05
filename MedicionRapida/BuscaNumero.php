@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($myvar)){
-	include("../../class/mysql.php");
+	include("../class/mysql.php");
 	$bd = new  MySQL;
 }
 $Clave="";

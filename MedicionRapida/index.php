@@ -13,7 +13,7 @@ elseif($_SESSION['UsuarioCveSistema']!=4 || $_SESSION['EncuestaCveEncuesta']!=1)
 }
 
 if(!isset($bd)){
-	include("../../class/mysql.php");
+	include("../class/mysql.php");
 	$bd = new  MySQL;
 }
 
@@ -232,6 +232,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 					$( "#divObservacion" ).show('fade');
 					$( "#divDatosEncuesta" ).hide();
 				}
+                $("#btnGuardar").removeAttr("disabled");
 			}
 			$("[name='RadEstado']").on( "change", RadEstadoFun );
 			$("#btnNumero").click(function(){
@@ -246,15 +247,15 @@ if($Fila=$bd->fetch_array($Resultado)){
 				return false;
 			});
 			$("#btnGuardar").click(function(){
+                $("#btnGuardar").attr("disabled", "disabled");
 				$("#RadLlamada").css('border', 'none');
 				$("#lbRedSocial").css('border', 'none');
 				mensaje="";
 				err=false;
-				if($("input[name=RadEstado]:radio").val()==1){
-					
+				if($("input[name='RadEstado']:checked").val()==1){
 				}
 				else{
-					if(!$("input[name=RadEstado]:radio").is(':checked')){
+					if(!$("input[name='RadEstado']:radio").is(':checked')){
 						$("#RadLlamada").css({"border-bottom" : "3px solid #f00d0d"});
 						err=true;
 					}
@@ -265,6 +266,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 						message: '<h3>Datos Incompletos</h3>'+mensaje, 
 						callback: function(){
 							//location.reload();
+                            $("#btnGuardar").removeAttr("disabled");
 						}
 					});
 					return false;

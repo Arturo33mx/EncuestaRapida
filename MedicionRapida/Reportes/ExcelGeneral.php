@@ -12,7 +12,7 @@ $objPHPExcel = $objReader->load("ReporteGeneral.xlsx");
 
 /** conexion bd **/
 if(!isset($bd)):
-	include("../../../class/mysql.php");
+	include("../../class/mysql.php");
 	$bd = new  MySQL;
 endif;
 header('Content-Type: text/html; charset=ISO-8859-1');
