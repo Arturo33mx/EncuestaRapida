@@ -7,7 +7,8 @@ class MySQL
 	{
 		if(!isset($this->conexion)){
 			//sdsINFORMATICA115
-			$this->conexion = (mysqli_connect("localhost","root","sPd2T2QAJn71ouN4","datosservicios")) or die(mysqli_error());
+			$this->conexion = (mysqli_connect("localhost","root","","datosservicios")) or die(mysqli_error());
+			//$this->conexion = (mysqli_connect("localhost","root","sPd2T2QAJn71ouN4","datosservicios")) or die(mysqli_error());
 		}
 	}
 	public function consulta($consulta){
