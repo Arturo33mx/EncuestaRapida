@@ -16,6 +16,23 @@ $array = array(
     "Víctor Hugo Islas Hernández",
     "Luz del Carmen Martínez"
 );
+$array2 = array(
+    "Secretario de Desarrollo Soacial en el Gob. del Estado", 
+    "Coordinador de Desarrollo Educativo (Corde) 07 de Izucar de Matamoros", 
+    "Presidente Municipal de Tepeojuma",
+    "Ex Diputado Federal del Pri",
+    "Presidente Municipal de Tilapa",
+    "",
+    "Ex Militante del Pri",
+    "",
+    "Ex Diputado Local por el PRD",
+    "Diputado Federal del Pri",
+    "Presidente Municipal de Izucar de Matamoros",
+    "Militante del PT y Empresario",
+    "Ex Diputado Local por el Partido Nueva Alianza",
+    "Ex Diputado Local",
+    ""
+);
 ?>
 <table width="100%" class="table table-striped table-bordered table-hover">
     <thead>
@@ -23,9 +40,9 @@ $array = array(
             <th></th>
             <th>¿Ha oído hablar de: ?</th>
             <th>En caso de negativa, dar información adicional 14.1.- Ayudado</th>
-            <th>14.2.- ¿De qué partido político es?</th>
-            <th>14.3.- ¿Ud. Votaría por él para DIPUTADO LOCAL?</th>
-            <th>14.4.- Y, ¿Qué opinión tiene de él / ella?</th>
+            <th>12.2.- ¿De qué partido político es?</th>
+            <th>12.3.- ¿Ud. Votaría por él para DIPUTADO LOCAL?</th>
+            <th>12.4.- Y, ¿Qué opinión tiene de él / ella?</th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +64,7 @@ $array = array(
                 </select>
             </td>
             <td>
+                <div class="alert alert-warning"><?php echo $array2[$i]; ?></div>
                 <select class="form-control">
                     <option value="0">Selec.</option>
                     <option value="1">Si </option>

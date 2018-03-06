@@ -112,7 +112,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 							</div>
 						</div>
 						<div class="card-body">
-							<div class="form-group" id="divDatosEncuesta">
+							<div class="form-group" id="divDatosEncuesta" style="display:none;">
                                 <div class="form-row alert alert-primary">
                                     <h4>
                                         Buenos días (tardes). Somos encuestadores de la consultoría independiente 1321. Estamos realizando un estudio de opinión, el cual es a través de una entrevista sobre temas de interés social. La encuesta es anónima. Sus respuestas tendrán un uso confidencial. ¿Me permite hacerle algunas preguntas?, Gracias!
@@ -150,7 +150,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                     
                                 </div>
 							</div>
-                            <div class="form-group">
+                            <div class="form-group" id="divElector" style="display:none;">
                                 <div class="form-row">
                                     <div class="col-md-12">
                                         <h4>¿Comparada con el año pasado, ¿cómo diría que está actualmente su situación económica personal?</h4>
@@ -199,45 +199,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>3.- En lo general, ¿APRUEBA o DESAPRUEBA la forma en que Tony Gali está gobernando al Estado de Puebla?</h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialSi">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialSi" value="1"> 1) Aprueba
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 2) Desaprueba  
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 3) NS  
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 4) NR 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12">
-                                        <h4>4.- En lo general, ¿APRUEBA o DESAPRUEBA la forma en que el Presidente Municipal está gobernando el municipio de…?</h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialSi">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialSi" value="1"> 1) Aprueba
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 2) Desaprueba  
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 3) NS  
-                                        </label>
-                                        <label class="btn btn-outline btn-primary" for="RadCredencialNo">
-                                            <input type="radio" name="RadCredencial" id="RadCredencialNo" value="2"> 4) NR 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12">
-                                        <h4>5.- ¿Qué opinión tiene del trabajo realizado por el actual Diputado Local?</h4>
+                                        <h4>3.- ¿Qué opinión tiene del trabajo realizado por el actual Diputado Local?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -262,7 +224,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div> 
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>6.- ¿Qué debería hacer el actual Diputado Local antes de terminar su gestión?</h4>
+                                        <h4>4.- ¿Qué debería hacer el actual Diputado Local antes de terminar su gestión?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="">1)</label>
@@ -275,7 +237,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>7.- En su opinión, ¿Cuál es el servicio público que Usted considera que tiene más problemas?  ¿Y después de ese cuál? ¿Y por último cuál otro?</h4>
+                                        <h4>5.- En su opinión, ¿Cuál es el servicio público que Usted considera que tiene más problemas?  ¿Y después de ese cuál? ¿Y por último cuál otro?</h4>
                                     </div>
                                     <div class="alert alert-warning">Mención Espontánea</div>
                                     <div class="col-md-12">
@@ -326,7 +288,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>8.- ¿Y Cuál es el servicio público más urgente de solucionar? ¿después de ese cuál? Y por último, ¿cuál otro?</h4>
+                                        <h4>6.- ¿Y Cuál es el servicio público más urgente de solucionar? ¿después de ese cuál? Y por último, ¿cuál otro?</h4>
                                     </div>
                                     <div class="alert alert-warning">Mención Espontánea</div>
                                     <div class="col-md-12">
@@ -377,7 +339,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>9.- ¿Sabe Usted cuándo serán las próximas elecciones en el Estado de Puebla?</h4>
+                                        <h4>7.- ¿Sabe Usted cuándo serán las próximas elecciones en el Estado de Puebla?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -402,7 +364,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>10.- El 1° de julio habrá elecciones para Gobernador, Presidentes Municipales y Diputados Locales, ¿Qué tanto le interesa votar en estas elecciones?</h4>
+                                        <h4>8.- El 1° de julio habrá elecciones para Gobernador, Presidentes Municipales y Diputados Locales, ¿Qué tanto le interesa votar en estas elecciones?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -424,7 +386,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>11.- Si el día de hoy fueran las elecciones para Diputado Local, ¿Por cuál partido  votaría? </h4>
+                                        <h4>9.- Si el día de hoy fueran las elecciones para Diputado Local, ¿Por cuál partido  votaría? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -482,7 +444,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>12.- En este momento, ¿Con qué partido político se identifica más? </h4>
+                                        <h4>10.- En este momento, ¿Con qué partido político se identifica más? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -540,7 +502,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>13.- ¿Por qué partido político nunca votaría? </h4>
+                                        <h4>11.- ¿Por qué partido político nunca votaría? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -598,7 +560,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>14.- Le voy a leer una lista de personalidades del Distrito:  </h4>
+                                        <h4>12.- Le voy a leer una lista de personalidades del Distrito:  </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-sm-2"></div>
@@ -612,7 +574,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>15.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
+                                        <h4>13.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
                                     <div class="alert alert-warning">Mención Espontánea</div>
                                     <div class="col-md-12">
                                         <div class="col-sm-2"></div>
@@ -637,7 +599,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                         <h4>Ahora bien… </h4>
                                     </div>
                                     <div class="col-md-12">
-                                        <h4>9.- Independientemente del candidato que postulen, de la siguiente lista de alianzas, ¿Por  cuál votaría Usted? </h4>
+                                        <h4>14.- Independientemente del candidato que postulen, de la siguiente lista de alianzas, ¿Por  cuál votaría Usted? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -662,7 +624,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>9.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?   </h4>
+                                        <h4>15.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?   </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -731,7 +693,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>Edad:</h4>
+                                        <h4>Estado Civil:</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-outline btn-primary" for="RadCredencialSi">
@@ -911,7 +873,18 @@ if($Fila=$bd->fetch_array($Resultado)){
 				}
                 $("#btnGuardar").removeAttr("disabled");
 			}
+            function RadElecctor(){
+				if($("input[name='RadCredencial']:checked").val()==1 && $("input[name='RadMuni']:checked").val()==1){
+					$( "#divElector" ).show('fade');
+				}
+				else{
+					$( "#divElector" ).hide();
+				}
+                $("#btnGuardar").removeAttr("disabled");
+			}
 			$("[name='RadEstado']").on( "change", RadEstadoFun );
+			$("[name='RadCredencial']").on( "change", RadElecctor );
+			$("[name='RadMuni']").on( "change", RadElecctor );
 			$("#btnNumero").click(function(){
 				$("#divBuscar").hide();
 				$.post("BuscaNumero.php",function(data){
