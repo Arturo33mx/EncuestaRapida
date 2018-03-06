@@ -5,8 +5,8 @@ if(!isset($_SESSION['UsuarioIdGeneral'])){
 }
 else{
 	switch($_SESSION['UsuarioCveSistema']){
-		case 1:
-			header('Location:Encuesta/index.php');
+		case 5:
+			header('Location:Distrito22/');
 			break;
 		case 2:
 			header('Location:EncuestaTemblor/index.php');
