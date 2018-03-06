@@ -6,12 +6,12 @@ if(!isset($myvar)){
 }
 $Clave="";
 header('Content-Type:text/html; charset=UTF-8');
-$consulta="CALL BuscarNumeroMedicion(".$_SESSION['UsuarioIdGeneral'].");";
+$consulta="CALL BuscarNumerodistrito22(".$_SESSION['UsuarioIdGeneral'].");";
 $Resultado=$bd->consulta($consulta); 
 if($Fila=$bd->fetch_array($Resultado)){
 	$Row ['Clave'] = $Fila['Clave'];
 	$Row ['Telefono'] = $Fila['Telefono'];
-	$Row ['Ciudad'] = $Fila['Ciudad'];
+	$Row ['Ciudad'] = $Fila['Municipio'];
 	$nombres[] = $Row;
 	$json_response = json_encode($nombres);
 	# Return the response

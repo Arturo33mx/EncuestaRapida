@@ -4,13 +4,13 @@ $array = array(
     "Armando Galindo Galindo", 
     "Gustavo Leoncio Sánchez",
     "Cutberto Cantorán",
+    "Melitón Lozano Pérez",
+    "Manuel Madero González ",
     "Eliseo Morales Rosales",
     "Conrado González Hernández",
-    "Edgar Morales Moreno",
-    "Arnulfo González",
-    "Melitón Lozano Pérez",
     "Filiberto Guevara González",
-    "Manuel Madero González ",
+    "Edgar Morales Moreno",
+    "Arnulfo Dominguez",
     "Mario Herrera Arzola",
     "Enrique Nácer Hernández",
     "Víctor Hugo Islas Hernández",
@@ -21,61 +21,59 @@ $array2 = array(
     "Coordinador de Desarrollo Educativo (Corde) 07 de Izucar de Matamoros", 
     "Presidente Municipal de Tepeojuma",
     "Ex Diputado Federal del Pri",
-    "Presidente Municipal de Tilapa",
-    "",
-    "Ex Militante del Pri",
-    "",
     "Ex Diputado Local por el PRD",
-    "Diputado Federal del Pri",
     "Presidente Municipal de Izucar de Matamoros",
+    "Presidente Municipal de Tilapa",
+    "Lider de la CNC en Izucar",
+    "Diputado Federal del Pri",
+    "Ex Militante del Pri",
+    "Ex Presidente municipal de Chiautla",
     "Militante del PT y Empresario",
     "Ex Diputado Local por el Partido Nueva Alianza",
     "Ex Diputado Local",
     ""
 );
 ?>
-<table width="100%" class="table table-striped table-bordered table-hover">
+<table class="table table-bordered table-hover">
     <thead>
         <tr class="bg-info text-white">
             <th></th>
             <th>¿Ha oído hablar de: ?</th>
-            <th>En caso de negativa, dar información adicional 14.1.- Ayudado</th>
+            <th>En caso de negativa, dar información adicional 12.1.- Ayudado</th>
             <th>12.2.- ¿De qué partido político es?</th>
             <th>12.3.- ¿Ud. Votaría por él para DIPUTADO LOCAL?</th>
             <th>12.4.- Y, ¿Qué opinión tiene de él / ella?</th>
         </tr>
     </thead>
     <tbody>
-        <tr class="odd gradeX">
+        <tr class="">
             <?php
             foreach ($array as $i => $value) {
             ?>
             <td>
-                <strong><?php echo $array[$i]; ?></strong>
+                <strong id="divRadPreg12<?php echo $i+1?>"><?php echo $array[$i]; ?></strong>
             </td>
             <td>
-                <select class="form-control">
+                <select class="form-control" onchange="CorroboraTabla(<?php echo $i+1?>,1)" id="cmbPreg121<?php echo $i+1?>">
                     <option value="0">Selec.</option>
                     <option value="1">Si </option>
                     <option value="2">Creo que si</option>
                     <option value="3">No</option>
-                    <option value="4">NS</option>
-                    <option value="5">NR</option>
+                    <option value="4">NS/NR</option>
                 </select>
             </td>
             <td>
                 <div class="alert alert-warning"><?php echo $array2[$i]; ?></div>
-                <select class="form-control">
+                <select class="form-control" onchange="CorroboraTabla(<?php echo $i+1?>,2)" id="cmbPreg122<?php echo $i+1?>" disabled>
                     <option value="0">Selec.</option>
                     <option value="1">Si </option>
                     <option value="2">Creo que si</option>
                     <option value="3">No</option>
-                    <option value="4">NS</option>
-                    <option value="5">NR</option>
+                    <option value="4">NS/NR</option>
                 </select>
             </td>
             <td>
-                <select class="form-control">
+                <select class="form-control" id="cmbPreg123<?php echo $i+1?>" disabled>
                     <option value="0">Selec.</option>
                     <option value="1">PAN</option>
                     <option value="2">PRI</option>
@@ -95,17 +93,16 @@ $array2 = array(
                 </select>
             </td>
             <td>
-                <select class="form-control">
+                <select class="form-control" id="cmbPreg124<?php echo $i+1?>" disabled>
                     <option value="0">Selec.</option>
                     <option value="1">Si</option>
                     <option value="2">Posiblemente</option>
                     <option value="3">No</option>
-                    <option value="4">NS</option>
-                    <option value="5">NR</option>
+                    <option value="4">NS/NR</option>
                 </select>
             </td>
             <td>
-                <select class="form-control">
+                <select class="form-control" id="cmbPreg125<?php echo $i+1?>" disabled>
                     <option value="0">Selec.</option>
                     <option value="1">Muy buena</option>
                     <option value="2">Buena</option>
@@ -131,3 +128,34 @@ $array2 = array(
         </tr>
     </tfoot>
 </table>
+<script>
+    function CorroboraTabla(id,opc){
+        if (opc==1){
+            if($('#cmbPreg121'+id).val()==1 || $('#cmbPreg121'+id).val()==2){
+                $('#cmbPreg122'+id).attr("disabled", "disabled");
+                $('#cmbPreg123'+id).removeAttr("disabled");
+                $('#cmbPreg124'+id).removeAttr("disabled");
+                $('#cmbPreg125'+id).removeAttr("disabled");
+                $('#cmbPreg122'+id).val(0);
+            }
+            else{
+                $('#cmbPreg122'+id).removeAttr("disabled");
+                $('#cmbPreg123'+id).attr("disabled", "disabled");
+                $('#cmbPreg124'+id).attr("disabled", "disabled");
+                $('#cmbPreg125'+id).attr("disabled", "disabled");
+            }
+        }
+        else{
+            if($('#cmbPreg122'+id).val()==1 || $('#cmbPreg122'+id).val()==2){
+                $('#cmbPreg123'+id).removeAttr("disabled");
+                $('#cmbPreg124'+id).removeAttr("disabled");
+                $('#cmbPreg125'+id).removeAttr("disabled");
+            }
+            else{
+                $('#cmbPreg123'+id).attr("disabled", "disabled");
+                $('#cmbPreg124'+id).attr("disabled", "disabled");
+                $('#cmbPreg125'+id).attr("disabled", "disabled");
+            }
+        }
+    }
+</script>
