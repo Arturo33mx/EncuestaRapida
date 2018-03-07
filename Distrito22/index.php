@@ -235,11 +235,11 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg5">
-                                        <h4>5.- En su opinión, ¿Cuál es el servicio público que Usted considera que tiene más problemas?  ¿Y después de ese cuál? ¿Y por último cuál otro?</h4>
+                                        <h4>5.- En su opinión, ¿Cuál es el servicio público que Usted considera que tiene más problemas? ¿Y por último cuál otro?</h4>
                                     </div>
                                     <div class="alert alert-warning">Mención Espontánea (Seleciona solo 2 opciones)</div>
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" id="txtPreg5Array" placeholder="">
+                                        <input type="hidden" class="form-control" id="txtPreg5Array" placeholder="">
                                         <label class="btn btn-primary" for="RadPreg51">
                                             <input type="checkbox" name="RadPreg5[]" onchange="RadPreg5(1)" id="RadPreg51" value="1"> 1) Alumbrado Público
                                         </label>
@@ -290,11 +290,11 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg6">
-                                        <h4>6.- ¿Y Cuál es el servicio público más urgente de solucionar? ¿después de ese cuál? Y por último, ¿cuál otro?</h4>
+                                        <h4>6.- ¿Y Cuál es el servicio público más urgente de solucionar? Y por último, ¿cuál otro?</h4>
                                     </div>
                                     <div class="alert alert-warning">Mención Espontánea (Seleciona solo 2 opciones)</div>
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" id="txtPreg6Array" placeholder="">
+                                        <input type="hidden" class="form-control" id="txtPreg6Array" placeholder="">
                                         <label class="btn btn-primary" for="RadPreg61">
                                             <input type="checkbox" name="RadPreg6[]" onchange="RadPreg6(1)" id="RadPreg61" value="1"> 1) Alumbrado Público
                                         </label>
@@ -634,6 +634,8 @@ if($Fila=$bd->fetch_array($Resultado)){
                                             }
                                             ?>
                                             <option value="16">NS/NR</option>
+                                            <option value="17">Otro</option>
+                                            <option value="18">Ninguno</option>
                                         </select>
                                     </div>
                                 </div>
