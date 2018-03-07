@@ -22,11 +22,19 @@ setlocale(LC_TIME, 'spanish');
 			<?php
 			$sql="SELECT A.Fecha, B.Nombre, A.Observaciones,
 				case EstatusNumero
-when 1 then 'contesto'
-when 2 then 'Ocupado'
-when 3 then 'Fuera de Linea'
-end as Estatus
-				FROM encuesta_medicion A, usuario B
+                    when 1 then 'contesto'
+                    when 2 then 'Ocupado'
+                    when 3 then 'Fuera de Linea'
+                end as Estatus,
+				case A.CveMotivo
+                    when 1 then 'No le interesa / Colgo'
+                    when 2 then 'Responde con insultos'
+                    when 3 then 'Numero fuera de servicio'
+                    when 4 then 'Buzon'
+                    when 5 then 'Se corto la llamada'
+                    when 6 then 'Llamar mas tarde'
+                end as Motivo
+                FROM encuesta_distrito22 A, usuario B
 				where CveNumero = $Clave and A.CveUsuario=B.Clave
 				order by Fecha desc LIMIT 0,5";
 			
@@ -45,7 +53,7 @@ end as Estatus
 					<?php echo utf8_encode($mivalor['Nombre']);?>
 				</td>
 				<td>
-					<?php echo ($mivalor['Estatus']);?>
+					<?php echo $mivalor['Estatus'].", ".$mivalor['Motivo'];?>
 				</td>
 				<td>
 					<?php echo utf8_encode($mivalor['Observaciones']);?>

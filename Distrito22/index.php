@@ -813,9 +813,10 @@ if($Fila=$bd->fetch_array($Resultado)){
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12" style="display:none">
+				<div class="col-md-12">
+                <hr>
 					<div class="card">
-						<div class="card-header text-white bg-info">
+						<div class="card-header text-white bg-primary">
 							Ultimas llamadas
 						</div>
 						<div class="card-body" id="divDetalles">
