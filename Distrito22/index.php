@@ -1073,7 +1073,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                             $("#divRadPreg8").css({"border-bottom" : "3px solid #f00d0d"});
                             err=true;
                         }
-                        if($("input[name=RadPreg8]:checked").val()==1 && $("input[name=RadPreg8]:checked").val()==2 && $("input[name=RadPreg8]:checked").val()==3){
+                        if($("input[name=RadPreg8]:checked").val()==1 || $("input[name=RadPreg8]:checked").val()==2 || $("input[name=RadPreg8]:checked").val()==3){
                             if(!$("input[name='RadPreg9']:radio").is(':checked')){
                                 $("#divRadPreg9").css({"border-bottom" : "3px solid #f00d0d"});
                                 err=true;
