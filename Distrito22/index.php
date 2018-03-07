@@ -281,7 +281,10 @@ if($Fila=$bd->fetch_array($Resultado)){
                                         </label>
                                         <input type="text" class="form-control" id="txtPreg5" placeholder="¿Cuál?">
                                         <label class="btn btn-primary" for="RadPreg514">
-                                            <input type="checkbox" name="RadPreg5[]" onchange="RadPreg5(1)" id="RadPreg514" value="14"> 14) NS/NR  
+                                            <input type="checkbox" name="RadPreg5[]" onchange="RadPreg5(14)" id="RadPreg514" value="14"> 14) NS/NR  
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg515">
+                                            <input type="checkbox" name="RadPreg5[]" onchange="RadPreg5(15)" id="RadPreg515" value="15"> 15) NS/NR
                                         </label>
                                     </div>
                                 </div>
@@ -334,6 +337,9 @@ if($Fila=$bd->fetch_array($Resultado)){
                                         <input type="text" class="form-control" id="txtPreg6" placeholder="¿Cuál?">
                                         <label class="btn btn-primary" for="RadPreg614">
                                             <input type="checkbox" name="RadPreg6[]" onchange="RadPreg6(14)" id="RadPreg614" value="14"> 14) NS/NR
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg615">
+                                            <input type="checkbox" name="RadPreg6[]" onchange="RadPreg6(15)" id="RadPreg615" value="15"> 15) NS/NR
                                         </label>
                                     </div>
                                 </div>
@@ -793,7 +799,8 @@ if($Fila=$bd->fetch_array($Resultado)){
                                     <option value="2">Responde con insultos</option>
                                     <option value="3">Numero fuera de servicio</option>
                                     <option value="4">Buzon</option>
-                                    <option value="4">Se corto la llamada</option>
+                                    <option value="5">Se corto la llamada</option>
+                                    <option value="6">Llamar mas tarde</option>
                                 </select>
 								<label for="txtObservaciones">
 									¿Observaciones?

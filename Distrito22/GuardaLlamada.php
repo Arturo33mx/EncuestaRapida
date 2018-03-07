@@ -38,7 +38,7 @@ if($Esta==1){
         $res61 = "'".$_POST["res61"]."'";
         $res7 = "'".$_POST["res7"]."'";
         $res8 = "'".$_POST["res8"]."'";
-        if($_POST["res8"]==1 && $_POST["res8"]==2 && $_POST["res8"]==2){
+        if($_POST["res8"]==1 || $_POST["res8"]==2 || $_POST["res8"]==3){
             $res9 = "'".$_POST["res9"]."'";
             $res14 = "'".$_POST["res14"]."'";
             $res15 = "'".$_POST["res15"]."'";
