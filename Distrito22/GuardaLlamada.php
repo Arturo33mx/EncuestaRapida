@@ -26,7 +26,7 @@ if($Esta==1){
     $cmbobs = 'null';
     $filtCre = "'".$_POST["filtCre"]."'";
     $filtMuni = "'".$_POST["filtMuni"]."'";
-    if($filtCre==1 && $filtMuni==1){
+    if($_POST["filtCre"]==1 && $_POST["filtMuni"]==1){
         $res1 = "'".$_POST["res1"]."'";
         $res2 = "'".$_POST["res2"]."'";
         $res3 = "'".$_POST["res3"]."'";
@@ -38,7 +38,7 @@ if($Esta==1){
         $res61 = "'".$_POST["res61"]."'";
         $res7 = "'".$_POST["res7"]."'";
         $res8 = "'".$_POST["res8"]."'";
-        if($res8==1 && $res8==2 && $res8==2){
+        if($_POST["res8"]==1 && $_POST["res8"]==2 && $_POST["res8"]==2){
             $res9 = "'".$_POST["res9"]."'";
             $res14 = "'".$_POST["res14"]."'";
             $res15 = "'".$_POST["res15"]."'";

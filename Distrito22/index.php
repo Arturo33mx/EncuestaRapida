@@ -556,7 +556,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                         <h4>Ahora bien… </h4>
                                     </div>
                                     <div class="col-md-12" id="divRadPreg14">
-                                        <h4>14.- Independientemente del candidato que postulen, de la siguiente lista de alianzas, ¿Por  cuál votaría Usted? </h4>
+                                        <h4>12.- Independientemente del candidato que postulen, de la siguiente lista de alianzas, ¿Por  cuál votaría Usted? </h4>
                                     </div>
                                     <div class="alert alert-warning">Leer opciones 1 a 3</div>
                                     <div class="col-md-12">
@@ -582,7 +582,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row divPregDep8" style="display:none">
                                     <div class="col-md-12" id="divRadPreg15">
-                                        <h4>15.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?</h4>
+                                        <h4>13.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?</h4>
                                     </div>
                                     <div class="alert alert-warning">Leer opciones 1 a 3</div>
                                     <div class="col-md-12">
@@ -608,7 +608,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg12">
-                                        <h4>12.- Le voy a leer una lista de personalidades del Distrito:  </h4>
+                                        <h4>14.- Le voy a leer una lista de personalidades del Distrito:  </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <?php include('Tabla.php'); ?>
@@ -616,7 +616,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg13">
-                                        <h4>13.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
+                                        <h4>15.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
                                     </div>
                                     <div class="alert alert-warning">Mención Espontánea</div>
                                     <div class="col-md-6">
