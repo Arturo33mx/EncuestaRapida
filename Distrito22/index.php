@@ -759,6 +759,9 @@ if($Fila=$bd->fetch_array($Resultado)){
                                         <label class="btn btn-primary" for="RadPreg205">
                                             <input type="radio" name="RadPreg20" id="RadPreg205" value="5"> Profesional y más
                                         </label>
+                                        <label class="btn btn-primary" for="RadPreg206">
+                                            <input type="radio" name="RadPreg20" id="RadPreg206" value="6"> Ninguna
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-row">

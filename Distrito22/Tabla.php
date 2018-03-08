@@ -5,7 +5,7 @@ $array = array(
     "Gustavo Leoncio Sánchez",
     "Cutberto Cantorán",
     "Melitón Lozano Pérez",
-    "Manuel Madero González ",
+    "Manuel Madero González",
     "Eliseo Morales Rosales",
     "Conrado González Hernández",
     "Filiberto Guevara González",
@@ -38,11 +38,11 @@ $array2 = array(
     <thead>
         <tr class="bg-info text-white">
             <th></th>
-            <th>¿Ha oído hablar de: ?</th>
-            <th>En caso de negativa, dar información adicional 12.1.- Ayudado</th>
-            <th>12.2.- ¿De qué partido político es?</th>
-            <th>12.3.- ¿Ud. Votaría por él para DIPUTADO LOCAL?</th>
-            <th>12.4.- Y, ¿Qué opinión tiene de él / ella?</th>
+            <th>12.1 -¿Ha oído hablar de: ?</th>
+            <th>En caso de negativa, dar información adicional 12.2 - Ayudado</th>
+            <th>12.3 - ¿De qué partido político es?</th>
+            <th>12.4 - ¿Ud. Votaría por él para DIPUTADO LOCAL?</th>
+            <th>12.5 - Y, ¿Qué opinión tiene de él / ella?</th>
         </tr>
     </thead>
     <tbody>
