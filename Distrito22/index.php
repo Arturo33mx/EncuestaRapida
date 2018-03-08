@@ -803,6 +803,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                     <option value="4">Buzon</option>
                                     <option value="5">Se corto la llamada</option>
                                     <option value="6">Llamar mas tarde</option>
+                                    <option value="7">Encuesta incompleta</option>
                                 </select>
 								<label for="txtObservaciones">
 									¿Observaciones?
