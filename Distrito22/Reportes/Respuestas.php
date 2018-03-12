@@ -41,7 +41,7 @@ else{
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         if($ini>6){
             if($MostrarFila['COLUMN_NAME']=='Res4-1' || $MostrarFila['COLUMN_NAME']=='Res4-2'){
-                $sql="select  `".$MostrarFila['COLUMN_NAME']."` Res, count(`".$MostrarFila['COLUMN_NAME']."`)Total
+                $sql="select `".$MostrarFila['COLUMN_NAME']."` Res, count(`".$MostrarFila['COLUMN_NAME']."`)Total
                     from encuesta_distrito22
                     where `".$MostrarFila['COLUMN_NAME']."` is not null and char_length(`".$MostrarFila['COLUMN_NAME']."`)>2
                     group by `".$MostrarFila['COLUMN_NAME']."`
@@ -49,7 +49,7 @@ else{
                     limit 0,3;";
                 //echo $sql;
             }
-            if($MostrarFila['COLUMN_NAME']=='Res5' || $MostrarFila['COLUMN_NAME']=='Res6'){
+            elseif($MostrarFila['COLUMN_NAME']=='Res5' || $MostrarFila['COLUMN_NAME']=='Res6'){
                 $sql="select '1' as Res,(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=1) Total
                     union
                     select '2',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=2)
