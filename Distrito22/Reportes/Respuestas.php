@@ -47,6 +47,7 @@ else{
                     group by `".$MostrarFila['COLUMN_NAME']."`
                     having count(`".$MostrarFila['COLUMN_NAME']."`)>=1
                     limit 0,3;";
+                echo $sql;
             }
             if($MostrarFila['COLUMN_NAME']=='Res5' || $MostrarFila['COLUMN_NAME']=='Res6'){
                 $sql="select '1' as Res,(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=1) Total
@@ -86,7 +87,6 @@ else{
                 
             }
             if($Res=$bd->consulta($sql)){
-               
                 $total= $bd->num_rows($Res);
                 if($total!=0){
                     $Result=$bd->get_arreglo($sql);
