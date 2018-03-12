@@ -92,7 +92,7 @@ else{
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         foreach ($Result as $mivalor){
-                            echo "<br>".$MostrarFila['COLUMN_NAME']." - " .$mivalor['Res']." - ".$mivalor['Total'];
+                            echo "<br>".$MostrarFila['COLUMN_NAME']." - " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             /*
                             $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
                             $objPHPExcel->getActiveSheet()->setCellValue('B'.$indx, $mivalor['Res']);
