@@ -48,36 +48,36 @@ else{
                     having count(`".$MostrarFila['COLUMN_NAME']."`)>=1
                     limit 0,3;";
             }
-            elseif($MostrarFila['COLUMN_NAME']=='Res5' || $MostrarFila['COLUMN_NAME']=='Res6'){
-                $sql="select '1' as Res,(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=1) Total
+            if($MostrarFila['COLUMN_NAME']=='Res5' || $MostrarFila['COLUMN_NAME']=='Res6'){
+                $sql="select '1' as Res,(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=1) Total
                     union
-                    select '2',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=2)
+                    select '2',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=2)
                     union
-                    select '3',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=3)
+                    select '3',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=3)
                     union
-                    select '4',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=4)
+                    select '4',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=4)
                     union
-                    select '5',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=5)
+                    select '5',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=5)
                     union
-                    select '6',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=6)
+                    select '6',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=6)
                     union
-                    select '7',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=7)
+                    select '7',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=7)
                     union
-                    select '8',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=8)
+                    select '8',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=8)
                     union
-                    select '9',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=9)
+                    select '9',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=9)
                     union
-                    select '10',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=10)
+                    select '10',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=10)
                     union
-                    select '11',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=11)
+                    select '11',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=11)
                     union
-                    select '12',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=12)
+                    select '12',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=12)
                     union
-                    select '13',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=13)
+                    select '13',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=13)
                     union
-                    select '14',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=14)
+                    select '14',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=14)
                     union
-                    select '15',(select count(`".$MostrarFila['COLUMN_NAME']."`) from Encuesta_Distrito22 where `".$MostrarFila['COLUMN_NAME']."`=15)";
+                    select '15',(select count(`".$MostrarFila['COLUMN_NAME']."`) from encuesta_distrito22 where `".$MostrarFila['COLUMN_NAME']."`=15)";
             }
             else{
                 $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM encuesta_distrito22 
