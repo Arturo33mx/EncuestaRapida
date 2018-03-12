@@ -85,24 +85,26 @@ else{
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
                 
             }
-            $Res=$bd->consulta($sql);
-            $total= $bd->num_rows($Res);
-            if($total!=0){
-                $Result=$bd->get_arreglo($sql);
-                if(!empty($Result)){
-                    foreach ($Result as $mivalor){
-                        echo "<br>".$MostrarFila['COLUMN_NAME']." - " .$mivalor['Res']." - ".$mivalor['Total'];
-                        /*
-                        $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
-                        $objPHPExcel->getActiveSheet()->setCellValue('B'.$indx, $mivalor['Res']);
-                        $objPHPExcel->getActiveSheet()->setCellValue('C'.$indx, $mivalor['Total']);
-                        $indx++;*/
-                        
+            if(!($MostrarFila['COLUMN_NAME']=='Res4-1' || $MostrarFila['COLUMN_NAME']=='Res4-2')){
+                $Res=$bd->consulta($sql);
+                $total= $bd->num_rows($Res);
+                if($total!=0){
+                    $Result=$bd->get_arreglo($sql);
+                    if(!empty($Result)){
+                        foreach ($Result as $mivalor){
+                            echo "<br>".$MostrarFila['COLUMN_NAME']." - " .$mivalor['Res']." - ".$mivalor['Total'];
+                            /*
+                            $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
+                            $objPHPExcel->getActiveSheet()->setCellValue('B'.$indx, $mivalor['Res']);
+                            $objPHPExcel->getActiveSheet()->setCellValue('C'.$indx, $mivalor['Total']);
+                            $indx++;*/
+
+                        }
+
                     }
-                    
-                }
-                else{
-                    echo $sql;
+                    else{
+                        echo $sql;
+                    }
                 }
             }
         }
