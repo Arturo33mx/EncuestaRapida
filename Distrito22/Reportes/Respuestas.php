@@ -85,8 +85,8 @@ else{
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
                 
             }
-            if(!($MostrarFila['COLUMN_NAME']=='Res4-1' || $MostrarFila['COLUMN_NAME']=='Res4-2')){
-                $Res=$bd->consulta($sql);
+            if($Res=$bd->consulta($sql)){
+               
                 $total= $bd->num_rows($Res);
                 if($total!=0){
                     $Result=$bd->get_arreglo($sql);
@@ -106,6 +106,9 @@ else{
                         echo $sql;
                     }
                 }
+            }
+            else{
+                echo $sql;
             }
         }
         $ini++;
