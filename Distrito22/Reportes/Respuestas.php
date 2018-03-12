@@ -92,12 +92,11 @@ else{
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         foreach ($Result as $mivalor){
-                           // echo "<br>".$MostrarFila['COLUMN_NAME']." - " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
-                            
-                            $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
+                           echo "<br>".$MostrarFila['COLUMN_NAME']." - " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
+                           /* $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
                             $objPHPExcel->getActiveSheet()->setCellValue('B'.$indx, $mivalor['Res']);
                             $objPHPExcel->getActiveSheet()->setCellValue('C'.$indx, $mivalor['Total']);
-                            $indx++;
+                            $indx++;*/
 
                         }
 
@@ -106,6 +105,9 @@ else{
                         echo $sql;
                     }
                 }
+                else{
+                    echo $sql;
+                }
             }
             else{
                 echo $sql;
@@ -113,7 +115,7 @@ else{
         }
         $ini++;
     }
-    
+    /*
 	$limite = $indx - 1;
 	$objPHPExcel->getActiveSheet()->getStyle('A4:B'.$limite)->applyFromArray($styleArray);
 	$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Base de Numeros" '.$fecha1);
@@ -124,6 +126,6 @@ else{
 
 	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 	$objWriter->save('php://output');
-	exit;
+	exit;*/
 }
 ?>
