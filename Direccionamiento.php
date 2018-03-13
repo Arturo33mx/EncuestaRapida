@@ -8,14 +8,8 @@ else{
 		case 5:
 			header('Location:Distrito22/');
 			break;
-		case 2:
-			header('Location:EncuestaTemblor/index.php');
-			break;
-		case 3:
-			header('Location:EncuestaReconstruccion/');
-			break;
-		case 4:
-			header('Location:MedicionRapida/');
+        case 6:
+			header('Location:CapturaDistrito22/');
 			break;
 		default:
 			echo "Error 1001.......<br>llamar al administrador de Sistemas";

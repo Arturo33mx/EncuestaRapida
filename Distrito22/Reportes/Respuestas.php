@@ -8,7 +8,7 @@ require_once 'Classes/PHPExcel/Cell/AdvancedValueBinder.php';
 PHPExcel_Cell::setValueBinder(new PHPExcel_Cell_AdvancedValueBinder());
 
 $objReader = PHPExcel_IOFactory::createReader('Excel2007');
-$objPHPExcel = $objReader->load("ReporteGeneral2.xlsx");
+$objPHPExcel = $objReader->load("Preguntas y respuestas.xlsx");
 
 /** conexion bd **/
 if(!isset($bd)):
@@ -28,7 +28,11 @@ $styleArray = array(
 		),
 	),
 );
-
+$IdxAbc=0;
+$Abc = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+              "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
+              "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
+              "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "CK", "CL", "CM", "CN", "CO", "CP", "CQ", "CR", "CS", "CT", "CU", "CV", "CW", "CX", "CY", "CZ",);
 $consulta="select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'encuesta_distrito22';"; 
 $Resultado=$bd->consulta($consulta);
 $cuantos_registros= $bd->num_rows($Resultado);
@@ -36,11 +40,17 @@ if($cuantos_registros==0){
 	exit;
 }
 else{
-	$indx = 4;
+	
 	$ini = 0;
 	while($MostrarFila=$bd->fetch_array($Resultado)){
+        $indx = 4;
         if($ini>6){
-            if($MostrarFila['COLUMN_NAME']=='Res4-1' || $MostrarFila['COLUMN_NAME']=='Res4-2'){
+            if(
+                $MostrarFila['COLUMN_NAME']=='Res4-1' 
+                || $MostrarFila['COLUMN_NAME']=='Res4-2'
+                || $MostrarFila['COLUMN_NAME']=='Res5-1'
+                || $MostrarFila['COLUMN_NAME']=='Res6-1'
+            ){
                 $sql="select `".$MostrarFila['COLUMN_NAME']."` Res, count(`".$MostrarFila['COLUMN_NAME']."`)Total
                     from encuesta_distrito22
                     where `".$MostrarFila['COLUMN_NAME']."` is not null and char_length(`".$MostrarFila['COLUMN_NAME']."`)>2
@@ -92,33 +102,29 @@ else{
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         foreach ($Result as $mivalor){
-                           //echo "<br>".$MostrarFila['COLUMN_NAME']." - " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
-                           $objPHPExcel->getActiveSheet()->setCellValue('A'.$indx, $MostrarFila['COLUMN_NAME']);
-                            $objPHPExcel->getActiveSheet()->setCellValue('B'.$indx, $mivalor['Res']);
-                            $objPHPExcel->getActiveSheet()->setCellValue('C'.$indx, $mivalor['Total']);
+                            //echo "<br>".$Abc[$IdxAbc]." - " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
+                            //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
+                            //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
+                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($MostrarFila['COLUMN_NAME']." - ".$mivalor['Res'].") ".$mivalor['Total']));
                             $indx++;
-
                         }
-
                     }
                     else{
                         echo $sql;
                     }
                 }
-                /*else{
+                else{
                     echo $sql;
-                }*/
+                }
             }
             else{
                 echo $sql;
             }
+            $IdxAbc++;
         }
         $ini++;
     }
     
-	$limite = $indx - 1;
-	$objPHPExcel->getActiveSheet()->getStyle('A4:B'.$limite)->applyFromArray($styleArray);
-	$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Base de Numeros" '.$fecha1);
 	$nomb .='.xlsx';
 	header('Content-Type: application/vnd.ms-excel');
 	header('Content-Disposition: attachment;filename="'.$nomb.'"');
