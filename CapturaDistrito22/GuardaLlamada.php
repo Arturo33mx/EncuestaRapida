@@ -18,7 +18,7 @@ function limpia_espacios($cadena){
 }
 /*datos del servicio*/
 
-$col= "'".$_POST["col"]."'";
+//$col= "'".$_POST["col"]."'";
 $sec= "'".$_POST["sec"]."'";
 $fol= "'".$_POST["fol"]."'";
 $nip= "'".$_POST["nip"]."'";
@@ -108,7 +108,6 @@ $cmd2 = "
 `Seccion`,
 `Nip`,
 `Numero`,
-`Colonia`,
 `Folio`,
 `CveMunicipio`,
 `Res1`,
@@ -189,7 +188,6 @@ now(),
 $sec,
 $nip,
 $num,
-$col,
 $fol,
 $mun,
 $res1,

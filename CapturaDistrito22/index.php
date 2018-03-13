@@ -68,18 +68,14 @@ if(!isset($bd)){
                                         <h4>Datos de Encuesta</h4>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Colonia</label>
-                                        <input type="text" class="form-control" placeholder="Colonia" id="txtColonia">
-                                        <hr>
                                         <label>Seccion</label>
                                         <input type="text" class="form-control" placeholder="Seccion" id="txtSeccion">
                                         <hr>
                                         <label>Municipio</label>
                                         <select class="form-control" id="cmbMunicipio">
-                                            <option value='0'>Seleccione .. </option>
                                             <?php
                                             $sql="SELECT * FROM municipios
-                                                where ClaveMunicipio in (5,11,85)";
+                                                where ClaveMunicipio in (85)";
                                             $categorias=$bd->get_arreglo($sql);
                                             if(!empty($categorias)){
                                                 foreach ($categorias as $mivalor){
@@ -672,7 +668,7 @@ if(!isset($bd)){
 			$("#btnGuardar").click(function(){
                 $("#btnGuardar").attr("disabled", "disabled");("disabled", "disabled");
                 
-				$("#txtColonia").css('border', 'none');
+				//$("#txtColonia").css('border', 'none');
 				$("#txtSeccion").css('border', 'none');
 				$("#txtNip").css('border', 'none');
 				$("#txtNumero").css('border', 'none');
@@ -716,12 +712,12 @@ if(!isset($bd)){
 				mensaje="";
 				campo="";
 				err=false;
-                
+                /*
                 if($("#txtColonia").val().length==0){
                     $("#txtColonia").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#txtColonia";
                     err=true;
-                }
+                }*/
                 if($("#txtFolio").val().length==0){
                     $("#txtFolio").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#txtFolio";
@@ -900,7 +896,7 @@ if(!isset($bd)){
 					return false;
 				}else{
 					$.post("GuardaLlamada.php",{
-						col: $("#txtColonia").val(),
+						
 						sec: $("#txtSeccion").val(),
 						fol: $("#txtFolio").val(),
 						nip: $("#txtNip").val(),
