@@ -789,7 +789,7 @@ if(!isset($bd)){
                     err=true;
                 }
                 id = 1;
-                while (id<=4){
+                while (id<=11){
                     if($('#cmbPreg91'+id).val()==0){
                         $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
                         campo='#divRadPreg9'+id;
@@ -988,6 +988,7 @@ if(!isset($bd)){
 							}
 						});
 					});
+                    return false;
 				}
                 return false;
 			});
