@@ -211,7 +211,7 @@ if(!isset($bd)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg6">
-                                        <h4>6.- Si el día de hoy fueran las elecciones para Diputado Local, ¿Por cuál partido  votaría? </h4>
+                                        <h4>6.- Si el día de hoy fueran las elecciones para Presidente Municipal ¿Por cuál partido  votaría? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg61">
