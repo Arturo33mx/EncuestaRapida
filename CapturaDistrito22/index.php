@@ -399,8 +399,8 @@ if(!isset($bd)){
                                         <select class="form-control" id="cmbPreg10">
                                             <option class="form-control" value="0">Seleciona</option>
                                             <option value="1">1) NS/NR</option>
-                                            <option value="2">2) Otro</option>
-                                            <option value="3">3) Ninguno</option>
+                                            <option value="2">2) Ninguno</option>
+                                            <option value="3">3) Otro </option>
                                         <?php
                                             foreach ($array as $i => $value) {
                                                 $pos = strpos($array[$i], ")");
