@@ -398,14 +398,15 @@ if(!isset($bd)){
                                     <div class="col-md-6">
                                         <select class="form-control" id="cmbPreg10">
                                             <option class="form-control" value="0">Seleciona</option>
+                                            <option value="1">1) NS/NR</option>
+                                            <option value="2">2) Otro</option>
+                                            <option value="3">3) Ninguno</option>
                                         <?php
                                             foreach ($array as $i => $value) {
-                                                echo "<option value='".($i+1)."'>".$array[$i]."</option>";
+                                                $pos = strpos($array[$i], ")");
+                                                echo "<option value='".($i+4)."'>".($i+4).substr($array[$i],$pos)."</option>";
                                             }
                                             ?>
-                                            <option value="16">NS/NR</option>
-                                            <option value="17">Otro</option>
-                                            <option value="18">Ninguno</option>
                                         </select>
                                     </div>
                                 </div>
