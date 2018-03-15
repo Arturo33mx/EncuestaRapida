@@ -59,9 +59,9 @@ else{
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
                             while($indice!=$mivalor['Res']){
-                                echo $indice."-".$mivalor['Res'];
                                 $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($indice.") 0"));
                                 $indice++;
+                                $indx++;
                             }
                             $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res'].") ".$mivalor['Total']));
                             $indx++;
