@@ -994,4 +994,3 @@ if(!isset($bd)){
 	</div>
 </body>
 </html>
-
