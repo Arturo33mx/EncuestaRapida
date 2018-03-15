@@ -58,12 +58,11 @@ else{
                             //echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
-                            if($indice==$mivalor['Res']){
-                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res'].") ".$mivalor['Total']));
-                            }
-                            else{
+                            while($indice!=$mivalor['Res']){
                                 $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($indice.") 0"));
+                                $indice++;
                             }
+                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res'].") ".$mivalor['Total']));
                             $indx++;
                             $indice++;
                         }
