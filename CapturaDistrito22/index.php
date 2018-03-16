@@ -8,7 +8,7 @@ elseif($_SESSION['UsuarioCveSistema']!=7 || $_SESSION['EncuestaCveEncuesta']!=1)
 	echo "<br>Datos:";
 	echo "<br>".$_SESSION['NombreCompleto'];
 	echo "<br>".$_SESSION['UsuarioCveSistema'];
-	echo "<a href='class/Cerrar.php'>".$_SESSION['NombreCompleto']."(Salir)</a> ";
+	echo "<a href='../class/Cerrar.php'>".$_SESSION['NombreCompleto']."(Salir)</a> ";
 	exit();
 }
 
