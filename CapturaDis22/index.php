@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['UsuarioIdGeneral'])){
 	header('Location:../');
 }
-elseif($_SESSION['UsuarioCveSistema']!=7 || $_SESSION['EncuestaCveEncuesta']!=1){
+elseif($_SESSION['UsuarioCveSistema']!=6 || $_SESSION['EncuestaCveEncuesta']!=1){
 	echo "Error 1001.......<br>llamar al administrador de Sistemas";
 	echo "<br>Datos:";
 	echo "<br>".$_SESSION['NombreCompleto'];
@@ -693,13 +693,6 @@ if(!isset($bd)){
 				$("#divRadPreg96").css('border', 'none');
 				$("#divRadPreg97").css('border', 'none');
 				$("#divRadPreg98").css('border', 'none');
-				$("#divRadPreg99").css('border', 'none');
-				$("#divRadPreg910").css('border', 'none');
-				$("#divRadPreg911").css('border', 'none');
-				$("#divRadPreg912").css('border', 'none');
-				$("#divRadPreg913").css('border', 'none');
-				$("#divRadPreg914").css('border', 'none');
-				$("#divRadPreg915").css('border', 'none');
 				
 				$("#divRadPreg10").css('border', 'none');
 				$("#divRadPreg11").css('border', 'none');
@@ -786,7 +779,7 @@ if(!isset($bd)){
                     err=true;
                 }
                 id = 1;
-                while (id<=11){
+                while (id<=9){
                     if($('#cmbPreg91'+id).val()==0){
                         $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
                         campo='#divRadPreg9'+id;
@@ -794,6 +787,11 @@ if(!isset($bd)){
                     }
                     else{
                         if($('#cmbPreg91'+id).val()==1 || $('#cmbPreg91'+id).val()==2){
+                            if($('#cmbPreg92'+id).val()==0){
+                                $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
+                                campo='#divRadPreg9'+id;
+                                err=true;
+                            }
                             if($('#cmbPreg93'+id).val()==0){
                                 $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
                                 campo='#divRadPreg9'+id;
@@ -803,37 +801,6 @@ if(!isset($bd)){
                                 $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
                                 campo='#divRadPreg9'+id;
                                 err=true;
-                            }
-                            if($('#cmbPreg95'+id).val()==0){
-                                $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                campo='#divRadPreg9'+id;
-                                err=true;
-                            }
-                        }
-                        else{
-                            if($('#cmbPreg92'+id).val()==0){
-                                $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                campo='#divRadPreg9'+id;
-                                err=true;
-                            }
-                            else{
-                                if($('#cmbPreg92'+id).val()==1 || $('#cmbPreg122'+id).val()==2){
-                                    if($('#cmbPreg93'+id).val()==0){
-                                        $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                        campo='#divRadPreg9'+id;
-                                        err=true;
-                                    }
-                                    if($('#cmbPreg94'+id).val()==0){
-                                        $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                        campo='#divRadPreg9'+id;
-                                        err=true;
-                                    }
-                                    if($('#cmbPreg95'+id).val()==0){
-                                        $('#divRadPreg9'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                        campo='#divRadPreg9'+id;
-                                        err=true;
-                                    }
-                                }
                             }
                         }
                     }
@@ -915,57 +882,34 @@ if(!isset($bd)){
                         res921: $("#cmbPreg921").val(),
                         res931: $("#cmbPreg931").val(),
                         res941: $("#cmbPreg941").val(),
-                        res951: $("#cmbPreg951").val(),
                         res912: $("#cmbPreg912").val(),
                         res922: $("#cmbPreg922").val(),
                         res932: $("#cmbPreg932").val(),
                         res942: $("#cmbPreg942").val(),
-                        res952: $("#cmbPreg952").val(),
                         res913: $("#cmbPreg913").val(),
                         res923: $("#cmbPreg923").val(),
                         res933: $("#cmbPreg933").val(),
                         res943: $("#cmbPreg943").val(),
-                        res953: $("#cmbPreg953").val(),
                         res914: $("#cmbPreg914").val(),
                         res924: $("#cmbPreg924").val(),
                         res934: $("#cmbPreg934").val(),
                         res944: $("#cmbPreg944").val(),
-                        res954: $("#cmbPreg954").val(),
                         res915: $("#cmbPreg915").val(),
                         res925: $("#cmbPreg925").val(),
                         res935: $("#cmbPreg935").val(),
                         res945: $("#cmbPreg945").val(),
-                        res955: $("#cmbPreg955").val(),
                         res916: $("#cmbPreg916").val(),
                         res926: $("#cmbPreg926").val(),
                         res936: $("#cmbPreg936").val(),
                         res946: $("#cmbPreg946").val(),
-                        res956: $("#cmbPreg956").val(),
                         res917: $("#cmbPreg917").val(),
                         res927: $("#cmbPreg927").val(),
                         res937: $("#cmbPreg937").val(),
                         res947: $("#cmbPreg947").val(),
-                        res957: $("#cmbPreg957").val(),
                         res918: $("#cmbPreg918").val(),
                         res928: $("#cmbPreg928").val(),
                         res938: $("#cmbPreg938").val(),
                         res948: $("#cmbPreg948").val(),
-                        res958: $("#cmbPreg958").val(),
-                        res919: $("#cmbPreg919").val(),
-                        res929: $("#cmbPreg929").val(),
-                        res939: $("#cmbPreg939").val(),
-                        res949: $("#cmbPreg949").val(),
-                        res959: $("#cmbPreg959").val(),
-                        res9110: $("#cmbPreg9110").val(),
-                        res9210: $("#cmbPreg9210").val(),
-                        res9310: $("#cmbPreg9310").val(),
-                        res9410: $("#cmbPreg9410").val(),
-                        res9510: $("#cmbPreg9510").val(),
-                        res9111: $("#cmbPreg9111").val(),
-                        res9211: $("#cmbPreg9211").val(),
-                        res9311: $("#cmbPreg9311").val(),
-                        res9411: $("#cmbPreg9411").val(),
-                        res9511: $("#cmbPreg9511").val(),
                         res10: $("#cmbPreg10").val(),
 						res11: $("input[name=RadPreg11]:checked").val(),
                         res12: $("input[name=RadPreg12]:checked").val(),

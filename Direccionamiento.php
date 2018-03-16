@@ -9,7 +9,7 @@ else{
 			header('Location:Distrito22/');
 			break;
         case 6:
-			header('Location:CapturaDistrito22/');
+			header('Location:CapturaDis22/');
 			break;
 		default:
 			echo "Error 1001.......<br>llamar al administrador de Sistemas";
