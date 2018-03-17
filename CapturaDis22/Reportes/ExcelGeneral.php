@@ -85,7 +85,7 @@ $consulta="SELECT
 `Res16`,
 `Res17`,
 `Res18`
- FROM datosservicios.captura_distrito22;"; 
+ FROM datosservicios.captura_dis22;"; 
 $Resultado=$bd->consulta($consulta);
 //echo $consulta;
 $cuantos_registros= $bd->num_rows($Resultado);
