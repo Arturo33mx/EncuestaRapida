@@ -44,7 +44,7 @@ else{
 	$ini = 0;
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         $indx = 4;
-        if($ini>8){
+        if($ini>7){
             $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_dis22 
                 where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
