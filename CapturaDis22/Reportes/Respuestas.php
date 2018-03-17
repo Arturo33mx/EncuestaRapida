@@ -63,7 +63,7 @@ else{
                                 $indice++;
                                 $indx++;
                             }
-                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res'].") ".$mivalor['Total']));
+                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($MostrarFila['COLUMN_NAME'].") ".$mivalor['Total']));
                             $indx++;
                             $indice++;
                         }
