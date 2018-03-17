@@ -55,17 +55,17 @@ else{
                     if(!empty($Result)){
                         $indice=1;
                         foreach ($Result as $mivalor){
-                            echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
+                            //echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
-                            /*while($indice!=$mivalor['Res']){
+                            while($indice!=$mivalor['Res']){
                                 $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,'0');
                                 $indice++;
                                 $indx++;
                             }
                             $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res'].") ".$mivalor['Total']));
                             $indx++;
-                            $indice++;*/
+                            $indice++;
                         }
                     }
                     else{
@@ -83,7 +83,7 @@ else{
         }
         $ini++;
     }
-    /*
+    
 	$nomb .='.xlsx';
 	header('Content-Type: application/vnd.ms-excel');
 	header('Content-Disposition: attachment;filename="'.$nomb.'"');
@@ -91,6 +91,6 @@ else{
 
 	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 	$objWriter->save('php://output');
-	exit;*/
+	exit;
 }
 ?>
