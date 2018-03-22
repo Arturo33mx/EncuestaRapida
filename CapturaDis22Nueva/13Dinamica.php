@@ -29,6 +29,7 @@ if(!empty($categorias)){
     }
 }
 ?>
-    <option value="6">6) Otro </option>
-    <option value="7">7) NS/NR</option>
+    <option value="6">6) Ninguno </option>
+    <option value="7">7) Otro </option>
+    <option value="8">8) NS/NR</option>
 </select>
