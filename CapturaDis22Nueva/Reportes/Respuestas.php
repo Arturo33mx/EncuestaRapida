@@ -33,7 +33,7 @@ $Abc = array("B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O
               "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
               "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
               "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "CK", "CL", "CM", "CN", "CO", "CP", "CQ", "CR", "CS", "CT", "CU", "CV", "CW", "CX", "CY", "CZ",);
-$consulta="select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'captura_dis22';"; 
+$consulta="select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'captura_dis22_nueva';"; 
 $Resultado=$bd->consulta($consulta);
 $cuantos_registros= $bd->num_rows($Resultado);
 if($cuantos_registros==0){
@@ -44,8 +44,8 @@ else{
 	$ini = 0;
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         $indx = 4;
-        if($ini>7){
-            $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_dis22 
+        if($ini>8){
+            $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_dis22_nueva 
                 where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
             if($Res=$bd->consulta($sql)){
@@ -69,11 +69,11 @@ else{
                         }
                     }
                     else{
-                        echo "<br>1".$sql;
+                       // echo "<br>1".$sql;
                     }
                 }
                 else{
-                    echo "<br>2".$sql;
+                    //echo "<br>2".$sql;
                 }
             }
             else{
@@ -83,7 +83,6 @@ else{
         }
         $ini++;
     }
-    
 	$nomb .='.xlsx';
 	header('Content-Type: application/vnd.ms-excel');
 	header('Content-Disposition: attachment;filename="'.$nomb.'"');
