@@ -86,7 +86,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header text-white bg-info">
-							ENCUESTA DISTRITO 22
+							CONOCIMIENTO GIM
 						</div>
 						<div class="card-header">
 							<div id="divBuscar" style="<?php if($Pte) echo 'display:none;';?>">
