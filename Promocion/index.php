@@ -159,7 +159,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg3">
-                                        <h4>3.- ¿Sabía Usted que durante la gestión de Gerardo Islas como Secretario de Desarrollo Social se entregaron apoyos para la reconstruyeron de más de 28 mil viviendas afectadas por el sismo en todo el Estado y se benefició a más de 15 mil familias en la mixteca?</h4>
+                                        <h4>3.- ¿Sabía Usted que durante la gestión de Gerardo Islas como Secretario de Desarrollo Social se entregaron apoyos para la reconstrucción de más de 28 mil viviendas afectadas por el sismo en todo el Estado y se benefició a más de 15 mil familias en la mixteca?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg31">
