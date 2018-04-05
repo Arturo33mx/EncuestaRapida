@@ -115,7 +115,7 @@ if($Fila=$bd->fetch_array($Resultado)){
 							<div class="form-group" id="divDatosEncuesta" style="display:none;">
                                 <div class="form-row alert alert-primary">
                                     <h4>
-                                        Buenos días/tardes, hablamos de la consultoría independiente Unidos por la Mixteca, le estamos llamando para hacer un estudio sobre temas de interés social,  la encuesta es anónima y sus respuestas serán estrictamente confidenciales. No le toma más de 2 minutos, ¿me permite hacerle unas preguntas?. ¡Gracias!
+                                        Buenos días/tardes, hablamos de Analítica Marketing, S.A. de C.V., Empresa dedicada a la investigación. Le estamos llamando para hacer un estudio sobre temas de interés social, la encuesta es anónima y sus respuestas serán estrictamente confidenciales. No le toma más de 2 minutos, ¿me permite hacerle unas preguntas?. ¡Gracias!
                                         <hr>
                                     </h4>
                                     <input type="hidden" id="txtClave" value="<?php echo $Clave;?>">
@@ -159,7 +159,7 @@ if($Fila=$bd->fetch_array($Resultado)){
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg3">
-                                        <h4>3.- Sabía Usted que durante la gestión de Gerardo Islas como Secretario de Desarrollo Social se entregaron apoyos para la reconstruyeron de más de 28 mil viviendas afectadas por el sismo en todo el Estado y se benefició a más de 15 mil familias en la mixteca?</h4>
+                                        <h4>3.- ¿Sabía Usted que durante la gestión de Gerardo Islas como Secretario de Desarrollo Social se entregaron apoyos para la reconstruyeron de más de 28 mil viviendas afectadas por el sismo en todo el Estado y se benefició a más de 15 mil familias en la mixteca?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg31">
