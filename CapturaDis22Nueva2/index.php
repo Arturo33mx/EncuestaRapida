@@ -1189,7 +1189,7 @@ if(!isset($bd)){
 						res7: $("input[name=RadPreg7]:checked").val(),
 						res8: $("input[name=RadPreg8]:checked").val(),
 						res9: $("input[name=RadPreg9]:checked").val(),
-						res10: $("input[name=res10]:checked").val(),
+						res10: $("input[name=RadPreg10]:checked").val(),
                         res1111: $("#cmbPreg11111").val(),
                         res1121: $("#cmbPreg11121").val(),
                         res1131: $("#cmbPreg11131").val(),
