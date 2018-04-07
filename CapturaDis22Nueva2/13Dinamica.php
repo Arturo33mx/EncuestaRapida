@@ -25,8 +25,8 @@ $categorias=$bd->get_arreglo($sql);
 if(!empty($categorias)){
     foreach ($categorias as $mivalor){
 ?>
-    <option value="<?php echo ($mivalor['Identificador']+4);?>">
-        <?php echo ($mivalor['Identificador']+4).") ". utf8_encode($mivalor['Descripcion']);?>
+    <option value="<?php echo ($mivalor['Identificador']+3);?>">
+        <?php echo ($mivalor['Identificador']+3).") ". utf8_encode($mivalor['Descripcion']);?>
     </option>
 <?php
     }
