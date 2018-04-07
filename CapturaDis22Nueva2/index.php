@@ -99,8 +99,8 @@ if(!isset($bd)){
                                                 <input type="text" class="form-control bg-primary text-white" placeholder="Folio" id="txtFolio">
                                             </div>
                                             <div class="col-md-5">
-                                                <label>Folio Rojo</label>
-                                                <input type="text" class="form-control bg-danger text-white" placeholder="Folio" id="txtFolioR">
+                                                <label></label>
+                                                <input type="hidden" class="form-control bg-danger text-white" placeholder="Folio" id="txtFolioR">
                                             </div>
                                         </div>
                                     </div>
@@ -1046,8 +1046,8 @@ if(!isset($bd)){
                     err=true;
                 }
                 if(!$("input[name='RadPreg10']:radio").is(':checked')){
-                    $("#divRadPreg11").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg11";
+                    $("#divRadPreg10").css({"border-bottom" : "3px solid #f00d0d"});
+                    campo="#divRadPreg10";
                     err=true;
                 }
                 id = 1;
