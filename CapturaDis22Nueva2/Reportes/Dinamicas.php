@@ -33,14 +33,12 @@ $Abc = array("B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O
               "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
               "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
               "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "CK", "CL", "CM", "CN", "CO", "CP", "CQ", "CR", "CS", "CT", "CU", "CV", "CW", "CX", "CY", "CZ",);
-$consulta="select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'captura_dis22_nueva2';"; 
+$consulta="SELECT CveDepende, (select Descripcion from municipios X where X.Clave=CveDepende) FROM datosservicios.preguntas_dis22_nueva
+group by CveDepende;"; 
 $Resultado=$bd->consulta($consulta);
 $cuantos_registros= $bd->num_rows($Resultado);
-if($cuantos_registros==0){
-	exit;
-}
+if($cuantos_registros==0){exit;}
 else{
-	
 	$ini = 0;
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         $indx = 4;
