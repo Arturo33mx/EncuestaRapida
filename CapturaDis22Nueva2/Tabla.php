@@ -93,9 +93,9 @@ $array = array(
                 $('#cmbPreg1112'+id).attr("disabled", "disabled");
                 $('#cmbPreg1113'+id).attr("disabled", "disabled");
                 $('#cmbPreg1114'+id).attr("disabled", "disabled");
-                //$('#cmbPreg1112'+id).attr("disabled", "disabled");
-                //$('#cmbPreg1113'+id).attr("disabled", "disabled");
-                //$('#cmbPreg1114'+id).attr("disabled", "disabled");
+                $('#cmbPreg1112'+id).val(0);
+                $('#cmbPreg1113'+id).val(0);
+                $('#cmbPreg1114'+id).val(0);
             }
         }
     }

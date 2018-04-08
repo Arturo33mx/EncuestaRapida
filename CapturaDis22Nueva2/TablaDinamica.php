@@ -106,6 +106,9 @@ else{
                 $('#cmbPreg11-2-2'+id).attr("disabled", "disabled");
                 $('#cmbPreg11-2-3'+id).attr("disabled", "disabled");
                 $('#cmbPreg11-2-4'+id).attr("disabled", "disabled");
+                $('#cmbPreg11-2-2'+id).val(0);
+                $('#cmbPreg11-2-3'+id).val(0);
+                $('#cmbPreg11-2-4'+id).val(0);
             }
         }
     }
