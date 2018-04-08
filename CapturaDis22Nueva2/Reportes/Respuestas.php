@@ -20,6 +20,11 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 $fecha1 = date('Y-m-d');
 $nomb = 'Concentrado Medicion '.$fecha1;
 
+if(isset($_GET['Muni']))
+    $Muni=$_GET['Muni'];
+else
+    exit;
+
 $styleArray = array(
 	'borders' => array(
 		'allborders' => array(
@@ -40,13 +45,12 @@ if($cuantos_registros==0){
 	exit;
 }
 else{
-	
 	$ini = 0;
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         $indx = 4;
         if($ini>8){
             $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_dis22_nueva2
-                where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null
+                where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null and CveMunicipio=$Muni
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
             if($Res=$bd->consulta($sql)){
                 $total= $bd->num_rows($Res);
