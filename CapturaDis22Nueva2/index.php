@@ -75,8 +75,7 @@ if(!isset($bd)){
                                         <select class="form-control" id="cmbMunicipio">
                                             <option value="0">Selecione</option>
                                             <?php
-                                            $sql="SELECT * FROM municipios
-                                                where Clave in (51)";
+                                            $sql="SELECT * FROM datosservicios.municipios where Estatus=1";
                                             $categorias=$bd->get_arreglo($sql);
                                             if(!empty($categorias)){
                                                 foreach ($categorias as $mivalor){
