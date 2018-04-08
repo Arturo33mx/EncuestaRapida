@@ -76,7 +76,7 @@ if(!isset($bd)){
                                             <option value="0">Selecione</option>
                                             <?php
                                             $sql="SELECT * FROM municipios
-                                                where Clave in (160)";
+                                                where Clave in (51)";
                                             $categorias=$bd->get_arreglo($sql);
                                             if(!empty($categorias)){
                                                 foreach ($categorias as $mivalor){

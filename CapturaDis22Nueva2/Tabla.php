@@ -93,6 +93,9 @@ $array = array(
                 $('#cmbPreg1112'+id).attr("disabled", "disabled");
                 $('#cmbPreg1113'+id).attr("disabled", "disabled");
                 $('#cmbPreg1114'+id).attr("disabled", "disabled");
+                //$('#cmbPreg1112'+id).attr("disabled", "disabled");
+                //$('#cmbPreg1113'+id).attr("disabled", "disabled");
+                //$('#cmbPreg1114'+id).attr("disabled", "disabled");
             }
         }
     }
