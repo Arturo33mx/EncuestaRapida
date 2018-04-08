@@ -818,7 +818,7 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-6" id="divRadPreg18">
+                                    <div class="col-md-6">
                                         <hr>
                                         <button id="btnGuardar" class="btn btn-block btn-warning">Guardar</button>
                                     </div>
@@ -1098,17 +1098,17 @@ if(!isset($bd)){
                     campo="#divRadPreg15";
                     err=true;
                 }
-                if($("#cmbPreg16").val()==0){
+                if(!$("input[name='RadPreg16']:radio").is(':checked')){
                     $("#divRadPreg16").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg16";
                     err=true;
                 }
-                if($("#cmbPreg17").val()==0){
+                if(!$("input[name='RadPreg17']:radio").is(':checked')){
                     $("#divRadPreg17").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg17";
                     err=true;
                 }
-                if($("#cmbPreg18").val()==0){
+                if(!$("input[name='RadPreg18']:radio").is(':checked')){
                     $("#divRadPreg18").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg18";
                     err=true;
