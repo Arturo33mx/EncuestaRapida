@@ -48,7 +48,7 @@ else{
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         if($MostrarFila['PregBase']==11){
             $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."2",($MostrarFila['PregBase'].". -".$MostrarFila['Identificador'].".".$MostrarFila['SubIden']));
-            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."1",$MostrarFila['Descripcion']);
+            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."1",utf8_encode($MostrarFila['Descripcion']));
         }
         if($MostrarFila['PregBase']==13){
             $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."2",$MostrarFila['Descripcion']);
