@@ -20,6 +20,9 @@ else{
         case 9:
 			header('Location:CapturaDis22Nueva2/');
 			break;
+        case 10:
+			header('Location:CapturaLaFragua/');
+			break;
 		default:
 			echo "Error 1001.......<br>llamar al administrador de Sistemas";
 	}

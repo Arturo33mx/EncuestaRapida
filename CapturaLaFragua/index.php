@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['UsuarioIdGeneral'])){
 	header('Location:../');
 }
-elseif($_SESSION['UsuarioCveSistema']!=9 || $_SESSION['EncuestaCveEncuesta']!=1){
+elseif($_SESSION['UsuarioCveSistema']!=10 || $_SESSION['EncuestaCveEncuesta']!=1){
 	echo "Error 1001.......<br>llamar al administrador de Sistemas";
 	echo "<br>Datos:";
 	echo "<br>".$_SESSION['NombreCompleto'];
@@ -55,7 +55,7 @@ if(!isset($bd)){
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header text-white bg-info">
-							CAPTURA DISTRITO 22
+							Captura Lafragua
 						</div>
 						<div class="card-header">
 							<div class="form-group" >
@@ -73,9 +73,8 @@ if(!isset($bd)){
                                         <hr>
                                         <label>Municipio</label>
                                         <select class="form-control" id="cmbMunicipio">
-                                            <option value="0">Selecione</option>
                                             <?php
-                                            $sql="SELECT * FROM datosservicios.municipios where Estatus=1";
+                                            $sql="SELECT * FROM municipios where Clave=93";
                                             $categorias=$bd->get_arreglo($sql);
                                             if(!empty($categorias)){
                                                 foreach ($categorias as $mivalor){
@@ -176,283 +175,119 @@ if(!isset($bd)){
                                 </div> 
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg4">
-                                        <h4>4.- ¿Sabe Usted cuándo serán las próximas elecciones en el Estado de Puebla?</h4>
+                                        <h4>4.- ¿Qué opinión tiene del trabajo realizado por el actual Gobernador Tony Gali?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg41">
-                                            <input type="radio" name="RadPreg4" id="RadPreg41" value="1"> 1) Sí, el 1 de julio de 2018 
+                                            <input type="radio" name="RadPreg4" id="RadPreg41" value="1"> 1) Muy buena
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg42">
-                                            <input type="radio" name="RadPreg4" id="RadPreg42" value="2"> 2) Sí, en julio de 2018   
+                                            <input type="radio" name="RadPreg4" id="RadPreg42" value="2"> 2) Buena  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg43">
-                                            <input type="radio" name="RadPreg4" id="RadPreg43" value="3"> 3) Sí, este año  
+                                            <input type="radio" name="RadPreg4" id="RadPreg43" value="3"> 3) Regular  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg44">
-                                            <input type="radio" name="RadPreg4" id="RadPreg44" value="4"> 4) Sí (otra fecha) 
+                                            <input type="radio" name="RadPreg4" id="RadPreg44" value="4"> 4) Mala 
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg45">
-                                            <input type="radio" name="RadPreg4" id="RadPreg45" value="5"> 5) NS/NR
+                                            <input type="radio" name="RadPreg4" id="RadPreg45" value="5"> 5) Muy mala 
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg46">
+                                            <input type="radio" name="RadPreg4" id="RadPreg46" value="6"> 6) NS/NR  
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg5">
-                                        <h4>5.- El 1° de julio habrá elecciones para Gobernador, Presidentes Municipales y Diputados Locales, ¿Qué tanto le interesa votar en estas elecciones?</h4>
+                                        <h4>5.- ¿Qué opinión tiene del trabajo realizado por el Presidente Enrique Peña?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg51">
-                                            <input type="radio" name="RadPreg5" id="RadPreg51" value="1"> 1) Mucho 
+                                            <input type="radio" name="RadPreg5" id="RadPreg51" value="1"> 1) Muy buena
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg52">
-                                            <input type="radio" name="RadPreg5" id="RadPreg52" value="2"> 2) Regular    
+                                            <input type="radio" name="RadPreg5" id="RadPreg52" value="2"> 2) Buena  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg53">
-                                            <input type="radio" name="RadPreg5" id="RadPreg53" value="3"> 3) Poco
+                                            <input type="radio" name="RadPreg5" id="RadPreg53" value="3"> 3) Regular  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg54">
-                                            <input type="radio" name="RadPreg5" id="RadPreg54" value="4"> 4) Nada  
+                                            <input type="radio" name="RadPreg5" id="RadPreg54" value="4"> 4) Mala 
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg55">
-                                            <input type="radio" name="RadPreg5" id="RadPreg55" value="5"> 5) NS/NR 
+                                            <input type="radio" name="RadPreg5" id="RadPreg55" value="5"> 5) Muy mala 
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg56">
+                                            <input type="radio" name="RadPreg5" id="RadPreg56" value="6"> 6) NS/NR  
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg6">
-                                        <h4>6.- En este momento, ¿Con qué partido político se identifica más? </h4>
+                                        <h4>6.- En su Opinion ¿que deberia hacer el actual presidente municipial</h4>
                                     </div>
                                     <div class="col-md-12">
-                                        <label class="btn btn-primary" for="RadPreg61">
-                                            <input type="radio" name="RadPreg6" id="RadPreg61" value="1"> 1) PAN
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg62">
-                                            <input type="radio" name="RadPreg6" id="RadPreg62" value="2"> 2) PRI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg63">
-                                            <input type="radio" name="RadPreg6" id="RadPreg63" value="3"> 3) PRD
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg64">
-                                            <input type="radio" name="RadPreg6" id="RadPreg64" value="4"> 4) PT
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg65">
-                                            <input type="radio" name="RadPreg6" id="RadPreg65" value="5"> 5) PVEM
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg66">
-                                            <input type="radio" name="RadPreg6" id="RadPreg66" value="6"> 6) Mov. Ciudadano
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg67">
-                                            <input type="radio" name="RadPreg6" id="RadPreg67" value="7"> 7) P Nueva Alianza
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg68">
-                                            <input type="radio" name="RadPreg6" id="RadPreg68" value="8"> 8) Compromiso por Puebla
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg69">
-                                            <input type="radio" name="RadPreg6" id="RadPreg69" value="9"> 9) PSI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg610">
-                                            <input type="radio" name="RadPreg6" id="RadPreg610" value="10"> 10) Morena
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg611">
-                                            <input type="radio" name="RadPreg6" id="RadPreg611" value="11"> 11) Encuentro Social
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg612">
-                                            <input type="radio" name="RadPreg6" id="RadPreg612" value="12"> 12) Candidatura Independiente
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg613">
-                                            <input type="radio" name="RadPreg6" id="RadPreg613" value="13"> 13) Anulado
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg614">
-                                            <input type="radio" name="RadPreg6" id="RadPreg614" value="14"> 14) Otro
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg615">
-                                            <input type="radio" name="RadPreg6" id="RadPreg615" value="15"> 15) Ninguno
-                                        </label> 
-                                        <label class="btn btn-primary" for="RadPreg616">
-                                            <input type="radio" name="RadPreg6" id="RadPreg616" value="16"> 16) No Sabe
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg617">
-                                            <input type="radio" name="RadPreg6" id="RadPreg617" value="17"> 17) No Responde
-                                        </label>
+                                        <input type="text" class="form-control" name="txtPreg6" id="txtPreg6">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg7">
-                                        <h4>7.- ¿Por qué partido político nunca votaría?</h4>
+                                        <h4>7.1- Servicio Publico </h4>
                                     </div>
                                     <div class="col-md-12">
-                                        <label class="btn btn-primary" for="RadPreg71">
-                                            <input type="radio" name="RadPreg7" id="RadPreg71" value="1"> 1) PAN
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg72">
-                                            <input type="radio" name="RadPreg7" id="RadPreg72" value="2"> 2) PRI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg73">
-                                            <input type="radio" name="RadPreg7" id="RadPreg73" value="3"> 3) PRD
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg74">
-                                            <input type="radio" name="RadPreg7" id="RadPreg74" value="4"> 4) PT
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg75">
-                                            <input type="radio" name="RadPreg7" id="RadPreg75" value="5"> 5) PVEM
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg76">
-                                            <input type="radio" name="RadPreg7" id="RadPreg76" value="6"> 6) Mov. Ciudadano
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg77">
-                                            <input type="radio" name="RadPreg7" id="RadPreg77" value="7"> 7) P Nueva Alianza
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg78">
-                                            <input type="radio" name="RadPreg7" id="RadPreg78" value="8"> 8) Compromiso por Puebla
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg79">
-                                            <input type="radio" name="RadPreg7" id="RadPreg79" value="9"> 9) PSI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg710">
-                                            <input type="radio" name="RadPreg7" id="RadPreg710" value="10"> 10) Morena
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg711">
-                                            <input type="radio" name="RadPreg7" id="RadPreg711" value="11"> 11) Encuentro Social
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg712">
-                                            <input type="radio" name="RadPreg7" id="RadPreg712" value="12"> 12) Candidatura Independiente
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg713">
-                                            <input type="radio" name="RadPreg7" id="RadPreg713" value="13"> 13) Anulado
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg714">
-                                            <input type="radio" name="RadPreg7" id="RadPreg714" value="14"> 14) Otro
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg715">
-                                            <input type="radio" name="RadPreg7" id="RadPreg715" value="15"> 15) Ninguno
-                                        </label> 
-                                        <label class="btn btn-primary" for="RadPreg716">
-                                            <input type="radio" name="RadPreg7" id="RadPreg716" value="16"> 16) No Sabe
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg717">
-                                            <input type="radio" name="RadPreg7" id="RadPreg717" value="17"> 17) No Responde
-                                        </label>
+                                        <input type="text" class="form-control" name="txtPreg71" id="txtPreg71">
+                                        <h4>7.2- Servicio Publico 2</h4>
+                                        <input type="text" class="form-control" name="txtPreg72" id="txtPreg72">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg8">
-                                        <h4>8.- Si el día de hoy fueran las elecciones para elegir GOBERNADOR DEL ESTADO ¿Por cuál partido  votaría?</h4>
+                                        <h4>8.- ¿Sabe Usted cuándo serán las próximas elecciones en el Estado de Puebla?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg81">
-                                            <input type="radio" name="RadPreg8" id="RadPreg81" value="1"> 1) PAN
+                                            <input type="radio" name="RadPreg8" id="RadPreg81" value="1"> 1) Sí, el 1 de julio de 2018 
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg82">
-                                            <input type="radio" name="RadPreg8" id="RadPreg82" value="2"> 2) PRI
+                                            <input type="radio" name="RadPreg8" id="RadPreg82" value="2"> 2) Sí, en julio de 2018   
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg83">
-                                            <input type="radio" name="RadPreg8" id="RadPreg83" value="3"> 3) PRD
+                                            <input type="radio" name="RadPreg8" id="RadPreg83" value="3"> 3) Sí, este año  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg84">
-                                            <input type="radio" name="RadPreg8" id="RadPreg84" value="4"> 4) PT
+                                            <input type="radio" name="RadPreg8" id="RadPreg84" value="4"> 4) Sí (otra fecha) 
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg85">
-                                            <input type="radio" name="RadPreg8" id="RadPreg85" value="5"> 5) PVEM
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg86">
-                                            <input type="radio" name="RadPreg8" id="RadPreg86" value="6"> 6) Mov. Ciudadano
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg87">
-                                            <input type="radio" name="RadPreg8" id="RadPreg87" value="7"> 7) P Nueva Alianza
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg88">
-                                            <input type="radio" name="RadPreg8" id="RadPreg88" value="8"> 8) Compromiso por Puebla
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg89">
-                                            <input type="radio" name="RadPreg8" id="RadPreg89" value="9"> 9) PSI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg810">
-                                            <input type="radio" name="RadPreg8" id="RadPreg810" value="10"> 10) Morena
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg811">
-                                            <input type="radio" name="RadPreg8" id="RadPreg811" value="11"> 11) Encuentro Social
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg812">
-                                            <input type="radio" name="RadPreg8" id="RadPreg812" value="12"> 12) Candidatura Independiente
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg813">
-                                            <input type="radio" name="RadPreg8" id="RadPreg813" value="13"> 13) Anulado
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg814">
-                                            <input type="radio" name="RadPreg8" id="RadPreg814" value="14"> 14) Otro
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg815">
-                                            <input type="radio" name="RadPreg8" id="RadPreg815" value="15"> 15) Ninguno
-                                        </label> 
-                                        <label class="btn btn-primary" for="RadPreg816">
-                                            <input type="radio" name="RadPreg8" id="RadPreg816" value="16"> 16) No Sabe
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg817">
-                                            <input type="radio" name="RadPreg8" id="RadPreg817" value="17"> 17) No Responde
+                                            <input type="radio" name="RadPreg8" id="RadPreg85" value="5"> 5) NS/NR
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg9">
-                                        <h4>9.- Si el día de hoy fueran las elecciones para elegir DIPUTADO LOCAL ¿Por cuál partido  votaría?</h4>
+                                        <h4>9.- El 1° de julio habrá elecciones para Gobernador, Presidentes Municipales y Diputados Locales, ¿Qué tanto le interesa votar en estas elecciones?</h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg91">
-                                            <input type="radio" name="RadPreg9" id="RadPreg91" value="1"> 1) PAN
+                                            <input type="radio" name="RadPreg9" id="RadPreg91" value="1"> 1) Mucho 
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg92">
-                                            <input type="radio" name="RadPreg9" id="RadPreg92" value="2"> 2) PRI
+                                            <input type="radio" name="RadPreg9" id="RadPreg92" value="2"> 2) Regular    
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg93">
-                                            <input type="radio" name="RadPreg9" id="RadPreg93" value="3"> 3) PRD
+                                            <input type="radio" name="RadPreg9" id="RadPreg93" value="3"> 3) Poco
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg94">
-                                            <input type="radio" name="RadPreg9" id="RadPreg94" value="4"> 4) PT
+                                            <input type="radio" name="RadPreg9" id="RadPreg94" value="4"> 4) Nada  
                                         </label>
                                         <label class="btn btn-primary" for="RadPreg95">
-                                            <input type="radio" name="RadPreg9" id="RadPreg95" value="5"> 5) PVEM
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg96">
-                                            <input type="radio" name="RadPreg9" id="RadPreg96" value="6"> 6) Mov. Ciudadano
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg97">
-                                            <input type="radio" name="RadPreg9" id="RadPreg97" value="7"> 7) P Nueva Alianza
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg98">
-                                            <input type="radio" name="RadPreg9" id="RadPreg98" value="8"> 8) Compromiso por Puebla
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg99">
-                                            <input type="radio" name="RadPreg9" id="RadPreg99" value="9"> 9) PSI
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg910">
-                                            <input type="radio" name="RadPreg9" id="RadPreg910" value="10"> 10) Morena
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg911">
-                                            <input type="radio" name="RadPreg9" id="RadPreg911" value="11"> 11) Encuentro Social
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg912">
-                                            <input type="radio" name="RadPreg9" id="RadPreg912" value="12"> 12) Candidatura Independiente
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg913">
-                                            <input type="radio" name="RadPreg9" id="RadPreg913" value="13"> 13) Anulado
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg914">
-                                            <input type="radio" name="RadPreg9" id="RadPreg914" value="14"> 14) Otro
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg915">
-                                            <input type="radio" name="RadPreg9" id="RadPreg915" value="15"> 15) Ninguno
-                                        </label> 
-                                        <label class="btn btn-primary" for="RadPreg916">
-                                            <input type="radio" name="RadPreg9" id="RadPreg916" value="16"> 16) No Sabe
-                                        </label>
-                                        <label class="btn btn-primary" for="RadPreg917">
-                                            <input type="radio" name="RadPreg9" id="RadPreg917" value="17"> 17) No Responde
+                                            <input type="radio" name="RadPreg9" id="RadPreg95" value="5"> 5) NS/NR 
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg10">
-                                        <h4>10.- Si el día de hoy fueran las elecciones para PRESIDENTE MUNICIPAL, ¿Por cuál de éstas opciones votaría?</h4>
+                                        <h4>10.- En este momento, ¿Con qué partido político se identifica más? </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="btn btn-primary" for="RadPreg101">
@@ -509,94 +344,156 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg20">
-                                        <h4>bis 11 - 20.- .- Si el día de hoy fueran las elecciones para SENADOR, ¿Por cuál de éstas opciones votaría?</h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" name="txtPreg20" id="txtPreg20" >
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg21">
-                                        <h4>bis 12 - 21.- .- Si el día de hoy fueran las elecciones para DIPUTADO FEDERAL, ¿Por cuál de éstas opciones votaría? </h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" name="txtPreg21" id="txtPreg21" >
-                                    </div>
-                                </div>
-                                <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg11">
-                                        <h4>11.- Le voy a leer una lista de personalidades del Distrito:  </h4>
+                                        <h4>11.- ¿Por qué partido político nunca votaría?</h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="btn btn-primary" for="RadPreg111">
+                                            <input type="radio" name="RadPreg11" id="RadPreg111" value="1"> 1) PAN
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg112">
+                                            <input type="radio" name="RadPreg11" id="RadPreg112" value="2"> 2) PRI
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg113">
+                                            <input type="radio" name="RadPreg11" id="RadPreg113" value="3"> 3) PRD
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg114">
+                                            <input type="radio" name="RadPreg11" id="RadPreg114" value="4"> 4) PT
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg115">
+                                            <input type="radio" name="RadPreg11" id="RadPreg115" value="5"> 5) PVEM
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg116">
+                                            <input type="radio" name="RadPreg11" id="RadPreg116" value="6"> 6) Mov. Ciudadano
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg117">
+                                            <input type="radio" name="RadPreg11" id="RadPreg117" value="7"> 7) P Nueva Alianza
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg118">
+                                            <input type="radio" name="RadPreg11" id="RadPreg118" value="8"> 8) Compromiso por Puebla
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg119">
+                                            <input type="radio" name="RadPreg11" id="RadPreg119" value="9"> 9) PSI
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1110">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1110" value="10"> 10) Morena
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1111">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1111" value="11"> 11) Encuentro Social
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1112">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1112" value="12"> 12) Candidatura Independiente
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1113">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1113" value="13"> 13) Anulado
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1114">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1114" value="14"> 14) Otro
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1115">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1115" value="15"> 15) Ninguno
+                                        </label> 
+                                        <label class="btn btn-primary" for="RadPreg1116">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1116" value="16"> 16) No Sabe
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1117">
+                                            <input type="radio" name="RadPreg11" id="RadPreg1117" value="17"> 17) No Responde
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12" id="divRadPreg12">
+                                        <h4>12.- Si el día de hoy fueran las elecciones para Presidente Municipal ¿Por cuál partido  votaría?</h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="btn btn-primary" for="RadPreg121">
+                                            <input type="radio" name="RadPreg12" id="RadPreg121" value="1"> 1) PAN
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg122">
+                                            <input type="radio" name="RadPreg12" id="RadPreg122" value="2"> 2) PRI
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg123">
+                                            <input type="radio" name="RadPreg12" id="RadPreg123" value="3"> 3) PRD
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg124">
+                                            <input type="radio" name="RadPreg12" id="RadPreg124" value="4"> 4) PT
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg125">
+                                            <input type="radio" name="RadPreg12" id="RadPreg125" value="5"> 5) PVEM
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg126">
+                                            <input type="radio" name="RadPreg12" id="RadPreg126" value="6"> 6) Mov. Ciudadano
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg127">
+                                            <input type="radio" name="RadPreg12" id="RadPreg127" value="7"> 7) P Nueva Alianza
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg128">
+                                            <input type="radio" name="RadPreg12" id="RadPreg128" value="8"> 8) Compromiso por Puebla
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg129">
+                                            <input type="radio" name="RadPreg12" id="RadPreg129" value="9"> 9) PSI
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1210">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1210" value="10"> 10) Morena
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1211">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1211" value="11"> 11) Encuentro Social
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1212">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1212" value="12"> 12) Candidatura Independiente
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1213">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1213" value="13"> 13) Anulado
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1214">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1214" value="14"> 14) Otro
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1215">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1215" value="15"> 15) Ninguno
+                                        </label> 
+                                        <label class="btn btn-primary" for="RadPreg1216">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1216" value="16"> 16) No Sabe
+                                        </label>
+                                        <label class="btn btn-primary" for="RadPreg1217">
+                                            <input type="radio" name="RadPreg12" id="RadPreg1217" value="17"> 17) No Responde
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12" id="divRadPreg13">
+                                        <h4>13.- Me puede decir el nombre  de una persona que le gustaria que fuera el proximo Presidente Municipal?</h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" name="txtPreg13" id="txtPreg13">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12" id="divRadPreg14">
+                                        <h4>14.- Le voy a leer una lista de personalidades del Distrito:  </h4>
                                     </div>
                                     <div class="col-md-12">
                                         <?php include('Tabla.php'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg12">
-                                        <h4>12.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" id="cmbPreg12">
-                                            <option class="form-control" value="0">Seleciona</option>
-                                            <option value="1">1) NS/NR</option>
-                                            <option value="2">2) Ninguno</option>
-                                            <option value="3">3) Otro</option>
-                                        <?php
-                                            foreach ($array as $i => $value) {
-                                                $pos = strpos($array[$i], ")");
-                                                echo "<option value='".($i+4)."'>".($i+4).substr($array[$i],$pos)."</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divDinamico"></div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg13">
-                                        <h4>13.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera el próximo  PRESIDENTE MUNICIPAL?</h4>
-                                    </div>
-                                    <div class="col-md-6" id="DivPreg13">
-                                        
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg14">
-                                        <h4>14.- Si hoy fueran las elecciones y los unicos candidatos fueran tarjeta 5 ¿Por cual de estas opciones votaria para DIPUTADO LOCAL?</h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" id="cmbPreg14">
-                                            <option class="form-control" value="0">Seleciona</option>
-                                        <?php
-                                            foreach ($array as $i => $value) {
-                                                $pos = strpos($array[$i], ")");
-                                                echo "<option value='".($i+1)."'>".($i+1).substr($array[$i],$pos)."</option>";
-                                            }
-                                            ?>
-                                            <option value="5">5) Ninguno</option>
-                                            <option value="6">6) Otro </option>
-                                            <option value="7">7) NS/NR</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg15">
-                                        <h4>15.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?</h4>
+                                        <h4>15.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
                                     </div>
-                                    <div class="col-md-12">
-                                       <select class="form-control" id="cmbPreg15">
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="cmbPreg15">
                                             <option class="form-control" value="0">Seleciona</option>
-                                        <?php
-                                            foreach ($array as $i => $value) {
-                                                $pos = strpos($array[$i], ")");
-                                                echo "<option value='".($i+1)."'>".($i+1).substr($array[$i],$pos)."</option>";
-                                            }
-                                            ?>
-                                            <option value="5">5) Ninguno</option>
-                                            <option value="6">6) Otro </option>
-                                            <option value="7">7) NS/NR</option>
+                                            <option value="1">1) Raul Pineda</option>
+                                            <option value="2">2) Emilio Hernandez</option>
+                                            <option value="3">3) Felipe Argûello</option>
+                                            <option value="4">4) Armando Ortiz</option>
+                                            <option value="5">5) Javier Solis</option>
+                                            <option value="6">6) Gilberto Jimarez</option>
+                                            <option value="7">7) Reyes Caballero</option>
+                                            <option value="8">8) Teresa Juarez</option>
+                                            <option value="9">9) Ninguno</option>
+                                            <option value="10">10) Otro</option>
+                                            <option value="11">11) NS/NR</option>
+                                            <option value="12">12) Karina Hernandez</option>
                                         </select>
                                     </div>
                                 </div>
@@ -921,22 +818,25 @@ if(!isset($bd)){
 				$("#divRadPreg8").css('border', 'none');
 				$("#divRadPreg9").css('border', 'none');
 				$("#divRadPreg10").css('border', 'none');
-                
-				$("#divRadPreg11-11").css('border', 'none');
-				$("#divRadPreg11-12").css('border', 'none');
-				$("#divRadPreg11-13").css('border', 'none');
-				$("#divRadPreg11-14").css('border', 'none');
-				
+				$("#divRadPreg11").css('border', 'none');
 				$("#divRadPreg12").css('border', 'none');
 				$("#divRadPreg13").css('border', 'none');
-				$("#divRadPreg14").css('border', 'none');
+                
+				$("#divRadPreg14-11").css('border', 'none');
+				$("#divRadPreg14-12").css('border', 'none');
+				$("#divRadPreg14-13").css('border', 'none');
+				$("#divRadPreg14-14").css('border', 'none');
+				$("#divRadPreg14-15").css('border', 'none');
+				$("#divRadPreg14-16").css('border', 'none');
+				$("#divRadPreg14-17").css('border', 'none');
+				$("#divRadPreg14-18").css('border', 'none');
+				$("#divRadPreg14-19").css('border', 'none');
+				
 				$("#divRadPreg15").css('border', 'none');
 				$("#divRadPreg16").css('border', 'none');
 				$("#divRadPreg17").css('border', 'none');
 				$("#divRadPreg18").css('border', 'none');
 				$("#divRadPreg19").css('border', 'none');
-				$("#divRadPreg20").css('border', 'none');
-				$("#divRadPreg21").css('border', 'none');
                 
 				$("#divRadPregA").css('border', 'none');
 				$("#divRadPregB").css('border', 'none');
@@ -978,44 +878,6 @@ if(!isset($bd)){
                     campo="#cmbMunicipio";
                     err=true;
                 }
-                else{
-                    $("select[name='cmbPreg11-2-1[]']").each(function(index){
-                        $("#divRadPreg11-2"+(index+1)).css('border', 'none');
-                    });
-                    $("select[name='cmbPreg11-2-1[]']").each(function(index){
-                        if($(this).val()==0){
-                            $('#divRadPreg11-2'+(index+1)).css({"border-bottom" : "3px solid #f00d0d"});
-                            campo='#divRadPreg11-2'+(index+1);
-                            err=true;
-                             //alert(campo);
-                        }
-                        else{
-                            if($(this).val()==1 || $(this).val()==2){
-                                if($('#cmbPreg11-2-2'+(index+1)).val()==0){
-                                    $('#divRadPreg11-2'+(index+1)).css({"border-bottom" : "3px solid #f00d0d"});
-                                    campo='#divRadPreg11-2'+(index+1);
-                                    err=true;
-                                }
-                                if($('#cmbPreg11-2-3'+(index+1)).val()==0){
-                                    $('#divRadPreg11-2'+(index+1)).css({"border-bottom" : "3px solid #f00d0d"});
-                                    campo='#divRadPreg11-2'+(index+1);
-                                    err=true;
-                                }
-                                if($('#cmbPreg11-2-4'+(index+1)).val()==0){
-                                    $('#divRadPreg11-2'+(index+1)).css({"border-bottom" : "3px solid #f00d0d"});
-                                    campo='#divRadPreg11-2'+(index+1);
-                                    err=true;
-                                }
-                            }
-                        }
-                       
-                    });
-                    if($("#cmbPreg13").val()==0){
-                        $("#divRadPreg13").css({"border-bottom" : "3px solid #f00d0d"});
-                        campo="#divRadPreg13";
-                        err=true;
-                    }
-                }
                 if(!$("input[name='RadPreg1']:radio").is(':checked')){
                     $("#divRadPreg1").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg1";
@@ -1041,13 +903,13 @@ if(!isset($bd)){
                     campo="#divRadPreg5";
                     err=true;
                 }
-                if(!$("input[name='RadPreg6']:radio").is(':checked')){
+                if($("#txtPreg6").val().length==0){
                     $("#divRadPreg6").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg6";
                     err=true;
                 }
                 /****/
-                if(!$("input[name='RadPreg7']:radio").is(':checked')){
+                if($("#txtPreg71").val().length==0){
                     $("#divRadPreg7").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg7";
                     err=true;
@@ -1067,48 +929,48 @@ if(!isset($bd)){
                     campo="#divRadPreg10";
                     err=true;
                 }
+                if(!$("input[name='RadPreg11']:radio").is(':checked')){
+                    $("#divRadPreg11").css({"border-bottom" : "3px solid #f00d0d"});
+                    campo="#divRadPreg11";
+                    err=true;
+                }
+                if(!$("input[name='RadPreg12']:radio").is(':checked')){
+                    $("#divRadPreg12").css({"border-bottom" : "3px solid #f00d0d"});
+                    campo="#divRadPreg12";
+                    err=true;
+                }
+                if($("#txtPreg13").val().length==0){
+                    $("#divRadPreg13").css({"border-bottom" : "3px solid #f00d0d"});
+                    campo="#divRadPreg13";
+                    err=true;
+                }
                 id = 1;
-                while (id<=4){
-                    if($('#cmbPreg1111'+id).val()==0){
-                        $('#divRadPreg11-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                        campo='#divRadPreg11-1'+id;
+                while (id<=9){
+                    if($('#cmbPreg14-1'+id).val()==0){
+                        $('#divRadPreg14-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
+                        campo='#divRadPreg14-1'+id;
                         err=true;
                     }
                     else{
-                        if($('#cmbPreg1111'+id).val()==1 || $('#cmbPreg1111'+id).val()==2){
-                            if($('#cmbPreg1112'+id).val()==0){
-                                $('#divRadPreg11-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                campo='#divRadPreg11-1'+id;
+                        if($('#cmbPreg14-1'+id).val()==1 || $('#cmbPreg14-1'+id).val()==2){
+                            if($('#cmbPreg14-2'+id).val()==0){
+                                $('#divRadPreg14-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
+                                campo='#divRadPreg14-1'+id;
                                 err=true;
                             }
-                            if($('#cmbPreg1113'+id).val()==0){
-                                $('#divRadPreg11-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                campo='#divRadPreg11-1'+id;
+                            if($('#cmbPreg14-3'+id).val()==0){
+                                $('#divRadPreg14-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
+                                campo='#divRadPreg14-1'+id;
                                 err=true;
                             }
-                            if($('#cmbPreg1114'+id).val()==0){
-                                $('#divRadPreg11-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
-                                campo='#divRadPreg11-1'+id;
+                            if($('#cmbPreg14-4'+id).val()==0){
+                                $('#divRadPreg14-1'+id).css({"border-bottom" : "3px solid #f00d0d"});
+                                campo='#divRadPreg14-1'+id;
                                 err=true;
                             }
                         }
                     }
                     id ++;
-                }
-                if($("#cmbPreg12").val()==0){
-                    $("#divRadPreg12").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg12";
-                    err=true;
-                }
-                if($("#cmbPreg13").val()==0){
-                    $("#divRadPreg13").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg13";
-                    err=true;
-                }
-                if($("#cmbPreg14").val()==0){
-                    $("#divRadPreg14").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg14";
-                    err=true;
                 }
                 if($("#cmbPreg15").val()==0){
                     $("#divRadPreg15").css({"border-bottom" : "3px solid #f00d0d"});
@@ -1130,15 +992,9 @@ if(!isset($bd)){
                     campo="#divRadPreg18";
                     err=true;
                 }
-                
-                if($("#txtPreg20").val().length==0){
-                    $("#divRadPreg20").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg20";
-                    err=true;
-                }
-                if($("#txtPreg21").val().length==0){
-                    $("#divRadPreg21").css({"border-bottom" : "3px solid #f00d0d"});
-                    campo="#divRadPreg21";
+                if(!$("input[name='RadPreg19']:radio").is(':checked')){
+                    $("#divRadPreg19").css({"border-bottom" : "3px solid #f00d0d"});
+                    campo="#divRadPreg19";
                     err=true;
                 }
                 
@@ -1184,24 +1040,7 @@ if(!isset($bd)){
 					});
 					return false;
 				}else{
-                    var Array1="";
-                    $("select[name='cmbPreg11-2-1[]']").each(function(index){
-                        Array1=Array1+","+$(this).val();
-                    });
-                    var Array2="";
-                    $("select[name='cmbPreg11-2-2[]']").each(function(index){
-                        Array2=Array2+","+$(this).val();
-                    });
-                    var Array3="";
-                    $("select[name='cmbPreg11-2-3[]']").each(function(index){
-                        Array3=Array3+","+$(this).val();
-                    });
-                    var Array4="";
-                    $("select[name='cmbPreg11-2-4[]']").each(function(index){
-                        Array4=Array4+","+$(this).val();
-                    });
 					$.post("GuardaLlamada.php",{
-						
 						sec: $("#txtSeccion").val(),
 						fol: $("#txtFolio").val(),
 						folR: $("#txtFolioR").val(),
@@ -1213,44 +1052,37 @@ if(!isset($bd)){
 						res3: $("input[name=RadPreg3]:checked").val(),
 						res4: $("input[name=RadPreg4]:checked").val(),
 						res5: $("input[name=RadPreg5]:checked").val(),
-						res6: $("input[name=RadPreg6]:checked").val(),
-						res7: $("input[name=RadPreg7]:checked").val(),
+						res6: $("#txtPreg6").val(),
+						res71: $("#txtPreg71").val(),
+						res72: $("#txtPreg72").val(),
 						res8: $("input[name=RadPreg8]:checked").val(),
 						res9: $("input[name=RadPreg9]:checked").val(),
 						res10: $("input[name=RadPreg10]:checked").val(),
-                        res1111: $("#cmbPreg11111").val(),
-                        res1121: $("#cmbPreg11121").val(),
-                        res1131: $("#cmbPreg11131").val(),
-                        res1141: $("#cmbPreg11141").val(),
-                        res1112: $("#cmbPreg11112").val(),
-                        res1122: $("#cmbPreg11122").val(),
-                        res1132: $("#cmbPreg11132").val(),
-                        res1142: $("#cmbPreg11142").val(),
-                        res1113: $("#cmbPreg11113").val(),
-                        res1123: $("#cmbPreg11123").val(),
-                        res1133: $("#cmbPreg11133").val(),
-                        res1143: $("#cmbPreg11143").val(),
-                        res1114: $("#cmbPreg11114").val(),
-                        res1124: $("#cmbPreg11124").val(),
-                        res1134: $("#cmbPreg11134").val(),
-                        res1144: $("#cmbPreg11144").val(),
+						res11: $("input[name=RadPreg11]:checked").val(),
+						res12: $("input[name=RadPreg12]:checked").val(),
+						res13: $("input[name=RadPreg13]:checked").val(),
+                        res1411: $("#cmbPreg14-11").val(),
+                        res1421: $("#cmbPreg14-21").val(),
+                        res1431: $("#cmbPreg14-31").val(),
+                        res1441: $("#cmbPreg14-41").val(),
+                        res1412: $("#cmbPreg14-12").val(),
+                        res1422: $("#cmbPreg14-22").val(),
+                        res1432: $("#cmbPreg14-32").val(),
+                        res1442: $("#cmbPreg14-42").val(),
+                        res1413: $("#cmbPreg14-13").val(),
+                        res1423: $("#cmbPreg14-23").val(),
+                        res1433: $("#cmbPreg14-33").val(),
+                        res1443: $("#cmbPreg14-43").val(),
+                        res1414: $("#cmbPreg14-14").val(),
+                        res1424: $("#cmbPreg14-24").val(),
+                        res1434: $("#cmbPreg14-34").val(),
+                        res1444: $("#cmbPreg14-44").val(),
                         
-                        res1121A: Array1,
-                        res1122A: Array2,
-                        res1123A: Array3,
-                        res1124A: Array4,
-                        
-                        res12: $("#cmbPreg12").val(),
-                        res13: $("#cmbPreg13").val(),
-                        res14: $("#cmbPreg14").val(),
                         res15: $("#cmbPreg15").val(),
-                        
                         res16: $("input[name=RadPreg16]:checked").val(),
                         res17: $("input[name=RadPreg17]:checked").val(),
                         res18: $("input[name=RadPreg18]:checked").val(),
                         res19: $("input[name=RadPreg19]:checked").val(),
-                        res20: $("#txtPreg20").val(),
-                        res21: $("#txtPreg21").val(),
                         
 						resA: $("input[name=RadPregA]:checked").val(),
                         resB: $("input[name=RadPregB]:checked").val(),

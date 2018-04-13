@@ -77,8 +77,6 @@ if(isset($_POST["res19"]))
     $res19 = "'".$_POST["res19"]."'";
 else
     $res19 = "NULL";
-$res20 = "'".$_POST["res20"]."'";
-$res21 = "'".$_POST["res21"]."'";
 
 $resA = "'".$_POST["resA"]."'";
 $resB = "'".$_POST["resB"]."'";
@@ -133,8 +131,6 @@ $cmd2 = "
 `Res17`,
 `Res18`,
 `Res19`,
-`Res20`,
-`Res21`,
 `ResA`,
 `ResB`,
 `ResC`,
@@ -184,8 +180,6 @@ $res16,
 $res17,
 $res18,
 $res19,
-$res20,
-$res21,
 $resA,
 $resB,
 $resC,
