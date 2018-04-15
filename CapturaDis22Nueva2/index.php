@@ -528,7 +528,7 @@ if(!isset($bd)){
                                     <div class="col-md-12" id="divRadPreg11">
                                         <h4>11.- Le voy a leer una lista de personalidades del Distrito:  </h4>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 table-responsive">
                                         <?php include('Tabla.php'); ?>
                                     </div>
                                 </div>
@@ -552,7 +552,7 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12" id="divDinamico"></div>
+                                    <div class="col-md-12 table-responsive" id="divDinamico"></div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12" id="divRadPreg13">

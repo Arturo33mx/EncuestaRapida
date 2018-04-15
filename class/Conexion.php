@@ -2,8 +2,8 @@
 class Database
 {
 	private static $dbName = 'datosservicios';
-	private static $dbHost = 'localhost';
-	private static $dbUserName = 'root';//easycode_innmob
+	private static $dbHost = '192.168.0.2';
+	private static $dbUserName = 'admin';//easycode_innmob
 	//private static $dbPassword = '';//innmob2017!
 	private static $dbPassword = 'sPd2T2QAJn71ouN4';//innmob2017!
 
