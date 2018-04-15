@@ -57,6 +57,7 @@ else{
                         $val=0;
                         foreach ($Result as $mivalor){
                             if($mivalor['Res']>16){
+                                echo $sql;
                                 $val+=$mivalor['Total'];
                             }
                             else{
