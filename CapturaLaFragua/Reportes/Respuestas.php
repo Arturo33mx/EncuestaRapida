@@ -54,8 +54,15 @@ else{
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         $indice=1;
+                        $val=0;
                         foreach ($Result as $mivalor){
-                            echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
+                            if($mivalor['Res']>16){
+                                $val+=$mivalor['Total'];
+                            }
+                            else{
+                                $val=$mivalor['Total'];
+                            }
+                            echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$val;
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
                             /*while($indice!=$mivalor['Res']){
