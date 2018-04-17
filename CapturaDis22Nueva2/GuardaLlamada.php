@@ -4,7 +4,7 @@ if(!isset($_SESSION['UsuarioIdGeneral'])){
 	exit;
 }
 if(!isset($myvar)):
-	include("../class/mysqlServer.php");
+	include("../class/mysql.php");
 	$bd = new  MySQL;
 endif;
 function conver($var){

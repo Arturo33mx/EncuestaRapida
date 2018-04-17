@@ -18,7 +18,7 @@ endif;
 header('Content-Type: text/html; charset=ISO-8859-1');
 
 $fecha1 = date('Y-m-d');
-$nomb = 'Concentrado frecuencias '.$fecha1;
+$nomb = 'Concentrado frecuencias '.$_GET['Seccion'];
 
 $styleArray = array(
 	'borders' => array(
@@ -29,6 +29,17 @@ $styleArray = array(
 	),
 );
 $IdxAbc=0;
+if(isset($_GET['Seccion'])){
+    if(strlen ($_GET['Seccion'])){
+        $seccion=" and Seccion=".$_GET['Seccion'];
+    }
+    else{
+        $seccion="";
+    }
+}
+else{
+    $seccion="";
+}
 $Abc = array("B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
               "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
               "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
@@ -45,7 +56,7 @@ else{
         $indx = 4;
         if($ini>8){
             $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_lafragua
-                where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null
+                where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null $seccion
                 group by `".$MostrarFila['COLUMN_NAME']."`"; 
             if($Res=$bd->consulta($sql)){
                 $total= $bd->num_rows($Res);
@@ -57,7 +68,7 @@ else{
                             //echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
-                            if($MostrarFila['COLUMN_NAME']!='Preg6'){
+                            if(!($MostrarFila['COLUMN_NAME']=='Preg6' || $MostrarFila['COLUMN_NAME']!='Preg71' || $MostrarFila['COLUMN_NAME']!='Preg72')){
                                 while($indice!=$mivalor['Res']){
                                     $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,'0');
                                     $indice++;

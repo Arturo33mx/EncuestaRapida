@@ -1,6 +1,11 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 setlocale(LC_TIME,'spanish');
+
+session_cache_limiter('private');
+$cache_limiter = session_cache_limiter();
+/* establecer la caducidad de la caché a 30 minutos */
+session_cache_expire(120);
 session_start();
 include 'class/Conexion.php';
 if(empty($_POST))

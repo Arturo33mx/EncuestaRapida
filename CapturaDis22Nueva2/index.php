@@ -1,5 +1,10 @@
 <?php
+session_cache_limiter('private');
+$cache_limiter = session_cache_limiter();
+/* establecer la caducidad de la caché a 30 minutos */
+session_cache_expire(3600);
 session_start();
+
 if(!isset($_SESSION['UsuarioIdGeneral'])){
 	header('Location:../');
 }
@@ -55,7 +60,7 @@ if(!isset($bd)){
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header text-white bg-info">
-							CAPTURA DISTRITO 22
+							CAPTURA DISTRITO 22 <?php echo session_cache_expire();?>
 						</div>
 						<div class="card-header">
 							<div class="form-group" >
