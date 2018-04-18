@@ -520,6 +520,7 @@ if(!isset($bd)){
                                     </label>
                                     <div class="col-md-8">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg20">
+                                            <option value="0">Seleciona</option>
                                             <option value="1">1) PAN</option>
                                             <option value="2">2) PRI</option>
                                             <option value="3">3) PRD</option>
@@ -546,6 +547,7 @@ if(!isset($bd)){
                                     </label>
                                     <div class="col-md-8">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg21">
+                                            <option value="0">Seleciona</option>
                                             <option value="1">1) PAN</option>
                                             <option value="2">2) PRI</option>
                                             <option value="3">3) PRD</option>
@@ -566,7 +568,7 @@ if(!isset($bd)){
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
+                                <div class="form-group row">
                                     <div class="col-md-12" id="divRadPreg11">
                                         <h4>11.- Le voy a leer una lista de personalidades del Distrito:  </h4>
                                     </div>
@@ -574,17 +576,17 @@ if(!isset($bd)){
                                         <?php include('Tabla.php'); ?>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg12">
+                                <div class="form-group row">
+                                    <label for="cmbPreg12" class="col-md-4 col-form-label" id="divRadPreg12">
                                         <h4>12.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" id="cmbPreg12">
-                                            <option class="form-control" value="0">Seleciona</option>
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select class="custom-select bg-primary text-white" id="cmbPreg12">
+                                            <option value="0">Seleciona</option>
                                             <option value="1">1) NS/NR</option>
                                             <option value="2">2) Ninguno</option>
                                             <option value="3">3) Otro</option>
-                                        <?php
+                                            <?php
                                             foreach ($array as $i => $value) {
                                                 $pos = strpos($array[$i], ")");
                                                 echo "<option value='".($i+4)."'>".($i+4).substr($array[$i],$pos)."</option>";
@@ -593,24 +595,24 @@ if(!isset($bd)){
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
+                                <div class="form-group row">
                                     <div class="col-md-12 table-responsive" id="divDinamico"></div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg13">
+                                <div class="form-group row">
+                                    <label for="cmbPreg13" class="col-md-4 col-form-label" id="divRadPreg13">
                                         <h4>13.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera el próximo  PRESIDENTE MUNICIPAL?</h4>
-                                    </div>
-                                    <div class="col-md-6" id="DivPreg13">
+                                    </label>
+                                    <div class="col-md-8" id="DivPreg13">
                                         
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg14">
+                                <div class="form-group row">
+                                    <label for="cmbPreg14" class="col-md-4 col-form-label" id="divRadPreg14">
                                         <h4>14.- Si hoy fueran las elecciones y los unicos candidatos fueran tarjeta 5 ¿Por cual de estas opciones votaria para DIPUTADO LOCAL?</h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="form-control" id="cmbPreg14">
-                                            <option class="form-control" value="0">Seleciona</option>
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select class="custom-select bg-primary text-white" id="cmbPreg14">
+                                            <option value="0">Seleciona</option>
                                         <?php
                                             foreach ($array as $i => $value) {
                                                 $pos = strpos($array[$i], ")");
@@ -623,13 +625,13 @@ if(!isset($bd)){
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg15">
+                                <div class="form-group row">
+                                    <label for="cmbPreg15" class="col-md-4 col-form-label" id="divRadPreg15">
                                         <h4>15.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?</h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                       <select class="form-control" id="cmbPreg15">
-                                            <option class="form-control" value="0">Seleciona</option>
+                                    </label>
+                                    <div class="col-md-8">
+                                       <select class="custom-select bg-primary text-white" id="cmbPreg15">
+                                            <option value="0">Seleciona</option>
                                         <?php
                                             foreach ($array as $i => $value) {
                                                 $pos = strpos($array[$i], ")");
@@ -1316,6 +1318,7 @@ if(!isset($bd)){
 				}
                 return false;
 			});
+            document.getElementById("miForm").reset();
             $('body,html').animate({scrollTop : 0}, 1000);
 		</script>
 	</div>

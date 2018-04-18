@@ -11,8 +11,8 @@ else{
     exit();
 }
 ?>
-<select class="form-control" id="cmbPreg13">
-    <option class="form-control" value="0">Seleciona</option>
+<select class="custom-select bg-primary text-white" id="cmbPreg13">
+    <option value="0">Seleciona</option>
     <?php
 $sql="SELECT Identificador, Descripcion FROM datosservicios.preguntas_dis22_nueva
 where PregBase=10 and CveDepende=$Muni 

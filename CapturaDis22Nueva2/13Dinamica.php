@@ -11,8 +11,8 @@ else{
     exit();
 }
 ?>
-<select class="form-control" id="cmbPreg13">
-    <option class="form-control" value="0">Seleciona</option>
+<select class="custom-select bg-primary text-white" id="cmbPreg13">
+    <option value="0">Seleciona</option>
     <option value="1">1) NS/NR</option>
     <option value="2">2) Ninguno </option>
     <option value="3">3) Otro </option>
