@@ -7,7 +7,8 @@ class MySQL
 	{
 		if(!isset($this->conexion)){
 			//sdsINFORMATICA115
-			$this->conexion = (mysqli_connect("192.168.0.2","admin","sPd2T2QAJn71ouN4","datosservicios")) or die(mysqli_error());
+			//$this->conexion = (mysqli_connect("localhost","root","","datosservicios")) or die(mysqli_error());
+            $this->conexion = (mysqli_connect("localhost","root","sPd2T2QAJn71ouN4","datosservicios")) or die(mysqli_error());
 		}
 	}
 	public function consulta($consulta){
@@ -43,7 +44,7 @@ class MySQL
 	public function num_rows($consulta){
 		return mysqli_num_rows($consulta);
 	}
-
+    
     public function getID(){
 		return mysqli_insert_id($this->conexion);
 	}

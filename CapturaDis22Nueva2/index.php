@@ -68,6 +68,7 @@ if(!isset($bd)){
 						</div>
 						<div class="card-body">
                             <div class="form-group">
+                                <form id="miForm">
                                 <div class="form-row">
                                     <div class="col-md-12">
                                         <h4>Datos de Encuesta</h4>
@@ -455,7 +456,7 @@ if(!isset($bd)){
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-row">
+                                <div class="form-group row">
                                     <div class="col-md-12" id="divRadPreg10">
                                         <h4>10.- Si el día de hoy fueran las elecciones para PRESIDENTE MUNICIPAL, ¿Por cuál de éstas opciones votaría?</h4>
                                     </div>
@@ -513,20 +514,56 @@ if(!isset($bd)){
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg20">
+                                <div class="form-group row" id="divRadPreg20">
+                                    <label for="cmbPreg20" class="col-md-4 col-form-label">
                                         <h4>bis 11 - 20.- .- Si el día de hoy fueran las elecciones para SENADOR, ¿Por cuál de éstas opciones votaría?</h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" name="txtPreg20" id="txtPreg20" >
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select class="custom-select bg-primary text-white" id="cmbPreg20">
+                                            <option value="1">1) PAN</option>
+                                            <option value="2">2) PRI</option>
+                                            <option value="3">3) PRD</option>
+                                            <option value="4">4) PT</option>
+                                            <option value="5">5) PVEM</option>
+                                            <option value="6">6) Mov. Ciudadano</option>
+                                            <option value="7">7) P Nueva Alianza</option>
+                                            <option value="8">8) Compromiso por Puebla</option>
+                                            <option value="9">9) PSI</option>
+                                            <option value="10">10) Morena</option>
+                                            <option value="11">11) Encuentro Social</option>
+                                            <option value="12">12) Candidatura Independiente</option>
+                                            <option value="13">13) Anulado</option>
+                                            <option value="14">14) Otro</option>
+                                            <option value="15">15) Ninguno</option>
+                                            <option value="16">16) No Sabe</option>
+                                            <option value="17">17) No Responde</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="col-md-12" id="divRadPreg21">
+                                <div class="form-group row"id="divRadPreg21">
+                                    <label for="cmbPreg21" class="col-md-4 col-form-label">
                                         <h4>bis 12 - 21.- .- Si el día de hoy fueran las elecciones para DIPUTADO FEDERAL, ¿Por cuál de éstas opciones votaría? </h4>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" name="txtPreg21" id="txtPreg21" >
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select class="custom-select bg-primary text-white" id="cmbPreg21">
+                                            <option value="1">1) PAN</option>
+                                            <option value="2">2) PRI</option>
+                                            <option value="3">3) PRD</option>
+                                            <option value="4">4) PT</option>
+                                            <option value="5">5) PVEM</option>
+                                            <option value="6">6) Mov. Ciudadano</option>
+                                            <option value="7">7) P Nueva Alianza</option>
+                                            <option value="8">8) Compromiso por Puebla</option>
+                                            <option value="9">9) PSI</option>
+                                            <option value="10">10) Morena</option>
+                                            <option value="11">11) Encuentro Social</option>
+                                            <option value="12">12) Candidatura Independiente</option>
+                                            <option value="13">13) Anulado</option>
+                                            <option value="14">14) Otro</option>
+                                            <option value="15">15) Ninguno</option>
+                                            <option value="16">16) No Sabe</option>
+                                            <option value="17">17) No Responde</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -843,6 +880,7 @@ if(!isset($bd)){
                                         <button id="btnGuardar" class="btn btn-block btn-warning">Guardar</button>
                                     </div>
                                 </div>
+                                </form>
                             </div>
 						</div>
 					</div>
@@ -1136,12 +1174,12 @@ if(!isset($bd)){
                     err=true;
                 }
                 
-                if($("#txtPreg20").val().length==0){
+                if($("#cmbPreg20").val()==0){
                     $("#divRadPreg20").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg20";
                     err=true;
                 }
-                if($("#txtPreg21").val().length==0){
+                if($("#cmbPreg21").val()==0){
                     $("#divRadPreg21").css({"border-bottom" : "3px solid #f00d0d"});
                     campo="#divRadPreg21";
                     err=true;
@@ -1254,8 +1292,8 @@ if(!isset($bd)){
                         res17: $("input[name=RadPreg17]:checked").val(),
                         res18: $("input[name=RadPreg18]:checked").val(),
                         res19: $("input[name=RadPreg19]:checked").val(),
-                        res20: $("#txtPreg20").val(),
-                        res21: $("#txtPreg21").val(),
+                        res20: $("#cmbPreg20").val(),
+                        res21: $("#cmbPreg21").val(),
                         
 						resA: $("input[name=RadPregA]:checked").val(),
                         resB: $("input[name=RadPregB]:checked").val(),
@@ -1269,7 +1307,8 @@ if(!isset($bd)){
 							message: data, 
 							callback: function(){
 								location.reload();
-                                return false;
+                                //return false;
+                                document.getElementById("miForm").reset();
 							}
 						});
 					});
