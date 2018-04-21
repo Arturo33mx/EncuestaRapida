@@ -56,29 +56,36 @@ else{
 	while($MostrarFila=$bd->fetch_array($Resultado)){
         $indx = 4;
         if($ini>8){
-            $sql="SELECT `".$MostrarFila['COLUMN_NAME']."` Res, count(*)Total FROM captura_lafragua
+            $sql="SELECT cast(`".$MostrarFila['COLUMN_NAME']."` as signed) Res, count(*)Total FROM captura_lafragua
                 where `".$MostrarFila['COLUMN_NAME']."` <> 0 and `".$MostrarFila['COLUMN_NAME']."` is not null $seccion
-                group by `".$MostrarFila['COLUMN_NAME']."`"; 
+                group by `".$MostrarFila['COLUMN_NAME']."`  order by Res "; 
             if($Res=$bd->consulta($sql)){
                 $total= $bd->num_rows($Res);
                 if($total!=0){
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         $indice=1;
+                        $TotalSum=0;
                         foreach ($Result as $mivalor){
                             //echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $mivalor['Res']);
-                            if(!($MostrarFila['COLUMN_NAME']=='Preg6' || $MostrarFila['COLUMN_NAME']!='Preg71' || $MostrarFila['COLUMN_NAME']!='Preg72')){
-                                while($indice!=$mivalor['Res']){
-                                    $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,'0');
-                                    $indice++;
-                                    $indx++;
-                                }
+                            while($indice<$mivalor['Res']){
+                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,'0');
+                                $indice++;
+                                $indx++;
                             }
-                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Total']));
-                            $indx++;
-                            $indice++;
+                            if($mivalor['Res']>16){
+                                $TotalSum+= $mivalor['Total'];
+                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$TotalSum));
+                                $indice=$mivalor['Res'];
+                            }
+                            else{
+                                $Total = $mivalor['Total'];
+                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$Total));
+                                $indx++;
+                                $indice++;
+                            }
                         }
                     }
                     else{
