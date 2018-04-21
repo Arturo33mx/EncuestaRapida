@@ -65,7 +65,6 @@ else{
                     $Result=$bd->get_arreglo($sql);
                     if(!empty($Result)){
                         $indice=1;
-                        $TotalSum=0;
                         foreach ($Result as $mivalor){
                             //echo "<br>".$Abc[$IdxAbc].": ".$MostrarFila['COLUMN_NAME']."- " .utf8_encode($mivalor['Res'])." - ".$mivalor['Total'];
                             //$objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx, $MostrarFila['COLUMN_NAME']);
@@ -75,17 +74,10 @@ else{
                                 $indice++;
                                 $indx++;
                             }
-                            if($mivalor['Res']>16){
-                                $TotalSum= $TotalSum+$mivalor['Total'];
-                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$sql));
-                                $indice=$mivalor['Res'];
-                            }
-                            else{
-                                $Total = $mivalor['Total'];
-                                $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$Total));
-                                $indx++;
-                                $indice++;
-                            }
+                            $Total = $mivalor['Total'];
+                            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$Total));
+                            $indx++;
+                            $indice++;
                         }
                     }
                     else{
