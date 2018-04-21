@@ -76,7 +76,7 @@ else{
                                 $indx++;
                             }
                             if($mivalor['Res']>16){
-                                $TotalSum+= $mivalor['Total'];
+                                $TotalSum= $TotalSum+$mivalor['Total'];
                                 $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor['Res']." : ".$TotalSum));
                                 $indice=$mivalor['Res'];
                             }
