@@ -32,15 +32,17 @@ $seccion="";
 if(isset($_GET['Seccion'])){
     if(strlen ($_GET['Seccion'])){
         $seccion=" and Seccion=".$_GET['Seccion'];
+        $nomb = 'Concentrado frecuencias '.$_GET['Seccion'];
     }
     else{
+        $nomb = 'Concentrado frecuencias ';
         $seccion="";
     }
 }
 else{
     $seccion="";
+    $nomb = 'Concentrado frecuencias ';
 }
-$nomb = 'Concentrado frecuencias '.$seccion;
 $Abc = array("B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
               "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
               "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
