@@ -515,10 +515,10 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-group row" id="divRadPreg20">
-                                    <label for="cmbPreg20" class="col-md-4 col-form-label">
+                                    <label for="cmbPreg20" class="col-md-6 col-form-label">
                                         <h4>bis 11 - 20.- .- Si el día de hoy fueran las elecciones para SENADOR, ¿Por cuál de éstas opciones votaría?</h4>
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg20">
                                             <option value="0">Seleciona</option>
                                             <option value="1">1) PAN</option>
@@ -542,10 +542,10 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-group row"id="divRadPreg21">
-                                    <label for="cmbPreg21" class="col-md-4 col-form-label">
+                                    <label for="cmbPreg21" class="col-md-6 col-form-label">
                                         <h4>bis 12 - 21.- .- Si el día de hoy fueran las elecciones para DIPUTADO FEDERAL, ¿Por cuál de éstas opciones votaría? </h4>
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg21">
                                             <option value="0">Seleciona</option>
                                             <option value="1">1) PAN</option>
@@ -577,10 +577,10 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="cmbPreg12" class="col-md-4 col-form-label" id="divRadPreg12">
+                                    <label for="cmbPreg12" class="col-md-6 col-form-label" id="divRadPreg12">
                                         <h4>12.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera  Diputado Local por este Distrito?</h4>
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg12">
                                             <option value="0">Seleciona</option>
                                             <option value="1">1) NS/NR</option>
@@ -599,18 +599,18 @@ if(!isset($bd)){
                                     <div class="col-md-12 table-responsive" id="divDinamico"></div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="cmbPreg13" class="col-md-4 col-form-label" id="divRadPreg13">
+                                    <label for="cmbPreg13" class="col-md-6 col-form-label" id="divRadPreg13">
                                         <h4>13.- ¿Quién de los nombres que le acabo de leer le gustaría que fuera el próximo  PRESIDENTE MUNICIPAL?</h4>
                                     </label>
-                                    <div class="col-md-8" id="DivPreg13">
+                                    <div class="col-md-6" id="DivPreg13">
                                         
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="cmbPreg14" class="col-md-4 col-form-label" id="divRadPreg14">
+                                    <label for="cmbPreg14" class="col-md-6 col-form-label" id="divRadPreg14">
                                         <h4>14.- Si hoy fueran las elecciones y los unicos candidatos fueran tarjeta 5 ¿Por cual de estas opciones votaria para DIPUTADO LOCAL?</h4>
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <select class="custom-select bg-primary text-white" id="cmbPreg14">
                                             <option value="0">Seleciona</option>
                                         <?php
@@ -626,10 +626,10 @@ if(!isset($bd)){
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="cmbPreg15" class="col-md-4 col-form-label" id="divRadPreg15">
+                                    <label for="cmbPreg15" class="col-md-6 col-form-label" id="divRadPreg15">
                                         <h4>15.- Independientemente de por quién va a votar, ¿quién cree que ganará las elecciones para Diputado Local en este Distrito?</h4>
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                        <select class="custom-select bg-primary text-white" id="cmbPreg15">
                                             <option value="0">Seleciona</option>
                                         <?php
