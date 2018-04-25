@@ -17,14 +17,14 @@ endif;
 header('Content-Type: text/html; charset=ISO-8859-1');
 
 $fecha1 = date('Y-m-d');
-$nomb = 'Concentrado Medicion '.$fecha1;
+$nomb = ' Concentrado'.$fecha1;
 
-/*
+
 if(isset($_GET['Muni']))
     $Muni=$_GET['Muni'];
 else
     exit;
-*/
+
 $styleArray = array(
 	'borders' => array(
 		'allborders' => array(
@@ -33,17 +33,39 @@ $styleArray = array(
 		),
 	),
 );
+$IdxAbc=48;
 $Abc = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-              "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
-              "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
-              "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "CK", "CL", "CM", "CN", "CO", "CP", "CQ", "CR", "CS", "CT", "CU", "CV", "CW", "CX", "CY", "CZ");
+            "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ",
+            "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BK", "BL", "BM", "BN", "BO", "BP", "BQ", "BR", "BS", "BT", "BU", "BV", "BW", "BX", "BY", "BZ",
+            "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "CK", "CL", "CM", "CN", "CO", "CP", "CQ", "CR", "CS", "CT", "CU", "CV", "CW", "CX", "CY", "CZ");
+$consulta="SELECT * FROM preguntas_dis22_nueva where CveDepende=$Muni"; 
+$Resultado=$bd->consulta($consulta);
+$cuantos_registros= $bd->num_rows($Resultado);
+if($cuantos_registros==0){
+    exit;
+}
+else{
+    while($MostrarFila=$bd->fetch_array($Resultado)){
+        if($MostrarFila['PregBase']==11){
+            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."2",($MostrarFila['PregBase'].". -".$MostrarFila['Identificador'].".".$MostrarFila['SubIden']));
+            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."1",utf8_encode($MostrarFila['Descripcion']));
+        }
+        if($MostrarFila['PregBase']==13){
+            $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc]."2",$MostrarFila['Descripcion']);
+        }
+        $IdxAbc++;
+    }
+}
+
 $sql="SELECT 
+    `captura_dis22_nueva2`.`Clave`,
     `captura_dis22_nueva2`.`Fecha`,
     `captura_dis22_nueva2`.`Seccion`,
     `captura_dis22_nueva2`.`Nip`,
     `captura_dis22_nueva2`.`Numero`,
     `captura_dis22_nueva2`.`Folio`,
     `captura_dis22_nueva2`.`FolioR`,
+    CveMunicipio,
     (select Descripcion from municipios where Clave=CveMunicipio)Municipio,
     `captura_dis22_nueva2`.`Res1`,
     `captura_dis22_nueva2`.`Res2`,
@@ -86,7 +108,7 @@ $sql="SELECT
     `captura_dis22_nueva2`.`ResD`,
     `captura_dis22_nueva2`.`ResE`,
     `captura_dis22_nueva2`.`ResF`
-FROM `datosservicios`.`captura_dis22_nueva2` ";
+FROM `datosservicios`.`captura_dis22_nueva2` where CveMunicipio=$Muni";
 if($Res=$bd->consulta($sql)){
     $total= $bd->num_rows($Res);
     if($total!=0){
@@ -94,6 +116,7 @@ if($Res=$bd->consulta($sql)){
         if(!empty($Result)){
             $indx=4;
             foreach ($Result as $mivalor){
+                $Municipio=utf8_encode($mivalor['Municipio']);
                 $objPHPExcel->getActiveSheet()->setCellValue("A".$indx,($mivalor['Fecha']));
                 $objPHPExcel->getActiveSheet()->setCellValue("B".$indx,($mivalor['Seccion']));
                 $objPHPExcel->getActiveSheet()->setCellValue("C".$indx,($mivalor['Nip']));
@@ -142,6 +165,35 @@ if($Res=$bd->consulta($sql)){
                 $objPHPExcel->getActiveSheet()->setCellValue("AT".$indx,($mivalor['ResD']));
                 $objPHPExcel->getActiveSheet()->setCellValue("AU".$indx,($mivalor['ResE']));
                 $objPHPExcel->getActiveSheet()->setCellValue("AV".$indx,($mivalor['ResF']));
+                
+                $consulta="SELECT * FROM preguntas_dis22_nueva where CveDepende=".$mivalor['CveMunicipio'];
+                $Resultado=$bd->consulta($consulta);
+                $cuantos_registros= $bd->num_rows($Resultado);
+                if($cuantos_registros==0){
+                    exit;
+                }
+                else{
+                    $IdxAbc=48;
+                    while($MostrarFila=$bd->fetch_array($Resultado)){
+                        $sql="select Res from respuestas_dis22_nueva where CveEncuesta=".$mivalor['Clave']." and CvePregunta=".$MostrarFila['Clave']; 
+                        if($Res2=$bd->consulta($sql)){
+                            $total2 = $bd->num_rows($Res2);
+                            if($total2!=0){
+                                $Result2=$bd->get_arreglo($sql);
+                                if(!empty($Result2)){
+                                    foreach ($Result2 as $mivalor2){
+                                        $objPHPExcel->getActiveSheet()->setCellValue($Abc[$IdxAbc].$indx,($mivalor2['Res']));
+                                    }
+                                }
+                            }
+                        }
+                        else{
+                            echo "<br>3".$sql;
+                        }
+                        $IdxAbc++;
+                    }
+                }
+                
                 $indx++;
             }
         }
@@ -156,7 +208,7 @@ if($Res=$bd->consulta($sql)){
 else{
     echo "<br>3".$sql;
 }
-$nomb .='.xlsx';
+$nomb =$Municipio.$nomb.'.xlsx';
 header('Content-Type: application/vnd.ms-excel');
 header('Content-Disposition: attachment;filename="'.$nomb.'"');
 header('Cache-Control: max-age=0');
