@@ -100,7 +100,7 @@ if($Res=$bd->consulta($sql)){
                 $objPHPExcel->getActiveSheet()->setCellValue("D".$indx,($mivalor['Numero']));
                 $objPHPExcel->getActiveSheet()->setCellValue("E".$indx,($mivalor['Folio']));
                 $objPHPExcel->getActiveSheet()->setCellValue("F".$indx,($mivalor['FolioR']));
-                $objPHPExcel->getActiveSheet()->setCellValue("G".$indx,($mivalor['Municipio']));
+                $objPHPExcel->getActiveSheet()->setCellValue("G".$indx,utf8_encode($mivalor['Municipio']));
                 $objPHPExcel->getActiveSheet()->setCellValue("H".$indx,($mivalor['Res1']));
                 $objPHPExcel->getActiveSheet()->setCellValue("I".$indx,($mivalor['Res2']));
                 $objPHPExcel->getActiveSheet()->setCellValue("J".$indx,($mivalor['Res3']));
